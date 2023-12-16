@@ -1,0 +1,830 @@
+/****** Object:  Database [fdstock]    Script Date: 18/11/2023 19:37:32 ******/
+CREATE DATABASE [fdstock]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'fdstock', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\fdstock.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'fdstock_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\fdstock_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [fdstock] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [fdstock].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [fdstock] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [fdstock] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [fdstock] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [fdstock] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [fdstock] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [fdstock] SET AUTO_CLOSE ON 
+GO
+ALTER DATABASE [fdstock] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [fdstock] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [fdstock] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [fdstock] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [fdstock] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [fdstock] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [fdstock] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [fdstock] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [fdstock] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [fdstock] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [fdstock] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [fdstock] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [fdstock] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [fdstock] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [fdstock] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [fdstock] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [fdstock] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [fdstock] SET  MULTI_USER 
+GO
+ALTER DATABASE [fdstock] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [fdstock] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [fdstock] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [fdstock] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [fdstock] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [fdstock] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+ALTER DATABASE [fdstock] SET QUERY_STORE = OFF
+GO
+USE [fdstock]
+GO
+/****** Object:  User [drissberdai]    Script Date: 18/11/2023 19:37:32 ******/
+CREATE USER [drissberdai] FOR LOGIN [drissberdai] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [admin]    Script Date: 18/11/2023 19:37:32 ******/
+CREATE USER [admin] FOR LOGIN [admin] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  Table [dbo].[article]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[article](
+	[n_article] [int] IDENTITY(1,1) NOT NULL,
+	[nom_article] [nchar](100) NULL,
+	[color] [nchar](50) NULL,
+	[size] [nchar](20) NULL,
+ CONSTRAINT [PK_article] PRIMARY KEY CLUSTERED 
+(
+	[n_article] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[caisse]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[caisse](
+	[montant] [float] NOT NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[cheque]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[cheque](
+	[n°cheque] [nchar](200) NOT NULL,
+	[montant] [float] NULL,
+	[date versement] [date] NULL,
+	[n° fournisseur] [int] NULL,
+	[n° entrree] [int] NULL,
+	[etat paiement] [int] NULL,
+ CONSTRAINT [PK_cheque] PRIMARY KEY CLUSTERED 
+(
+	[n°cheque] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[chequeCaisse]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[chequeCaisse](
+	[montant] [float] NOT NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[client]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[client](
+	[n° client] [int] IDENTITY(1,1) NOT NULL,
+	[denomination] [varchar](120) NULL,
+	[responsable] [varchar](120) NULL,
+	[n° ice] [varchar](120) NULL,
+	[n° telephone] [varchar](120) NULL,
+	[email] [varchar](120) NULL,
+	[siege social] [varchar](250) NULL,
+	[ville] [varchar](120) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[n° client] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[composant]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[composant](
+	[n° article] [int] IDENTITY(1,1) NOT NULL,
+	[type article] [nchar](120) NULL,
+	[color] [nchar](50) NULL,
+	[reference] [nchar](10) NULL,
+	[nom article] [nchar](120) NULL,
+	[stock] [nchar](120) NULL,
+	[prix achath] [float] NULL,
+	[tva] [int] NULL,
+ CONSTRAINT [PK_composant] PRIMARY KEY CLUSTERED 
+(
+	[n° article] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[connexion]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[connexion](
+	[login] [varchar](50) NOT NULL,
+	[motpasse] [varchar](50) NULL,
+	[type] [nchar](50) NULL,
+ CONSTRAINT [PK_connexion] PRIMARY KEY CLUSTERED 
+(
+	[login] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dcomposant]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dcomposant](
+	[nsm] [int] NOT NULL,
+	[n_article] [int] NOT NULL,
+	[qte] [float] NULL,
+ CONSTRAINT [PK_dcomposant] PRIMARY KEY CLUSTERED 
+(
+	[nsm] ASC,
+	[n_article] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dentree]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dentree](
+	[n° entre] [int] NOT NULL,
+	[n° produit] [int] NOT NULL,
+	[quantite] [int] NULL,
+ CONSTRAINT [PK__dentree__ED17EF4CA6CFDC99] PRIMARY KEY CLUSTERED 
+(
+	[n° entre] ASC,
+	[n° produit] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dentreeemb]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dentreeemb](
+	[n° entreemb] [int] NOT NULL,
+	[n° produitemb] [int] NOT NULL,
+	[quantiteemb] [int] NULL,
+ CONSTRAINT [PK__dentreee__BBC2CCAD3BB1DE76] PRIMARY KEY CLUSTERED 
+(
+	[n° entreemb] ASC,
+	[n° produitemb] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dentreeg]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dentreeg](
+	[n° entre] [int] NOT NULL,
+	[n° article] [int] NOT NULL,
+	[quantite] [float] NULL,
+	[prix achatht] [float] NULL,
+ CONSTRAINT [PK_dentreeg] PRIMARY KEY CLUSTERED 
+(
+	[n° entre] ASC,
+	[n° article] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dentreem]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dentreem](
+	[n° entrem] [int] NOT NULL,
+	[n° produitm] [int] NOT NULL,
+	[quantitem] [int] NULL,
+	[prix achathtm] [float] NULL,
+ CONSTRAINT [PK__dentreem__70A9A2ACEAAC6265] PRIMARY KEY CLUSTERED 
+(
+	[n° entrem] ASC,
+	[n° produitm] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dmachine]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dmachine](
+	[nsm] [int] IDENTITY(1,1) NOT NULL,
+	[n_machine] [nchar](50) NOT NULL,
+	[nom_article] [nchar](100) NULL,
+	[color] [nchar](50) NULL,
+	[size] [nchar](20) NULL,
+	[date_hour] [smalldatetime] NULL,
+ CONSTRAINT [PK_dmachine] PRIMARY KEY CLUSTERED 
+(
+	[nsm] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dpersonel]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dpersonel](
+	[nom_comp] [nchar](100) NULL,
+	[post] [nchar](50) NULL,
+	[presence] [nchar](20) NULL,
+	[objectif] [int] NULL,
+	[heursobj] [nchar](100) NULL,
+	[dhp] [smalldatetime] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dpiece_rechange]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dpiece_rechange](
+	[n_machine] [nchar](50) NOT NULL,
+	[n_ref] [nchar](100) NOT NULL,
+	[nom_piece] [nchar](200) NULL,
+	[qte] [int] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dsortie]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dsortie](
+	[n° sorti] [int] NOT NULL,
+	[n° produit] [int] NOT NULL,
+	[quantite] [int] NULL,
+ CONSTRAINT [PK_dsortie] PRIMARY KEY CLUSTERED 
+(
+	[n° sorti] ASC,
+	[n° produit] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dsortie_bon]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dsortie_bon](
+	[n° sortieb] [int] NOT NULL,
+	[n° produit] [nchar](100) NOT NULL,
+	[quantiteb] [int] NULL,
+	[qte_collisb] [int] NULL,
+	[prixvb] [float] NULL,
+ CONSTRAINT [PK_dsortie_bon] PRIMARY KEY CLUSTERED 
+(
+	[n° sortieb] ASC,
+	[n° produit] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dsortie_facture]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dsortie_facture](
+	[n° sortief] [int] NOT NULL,
+	[n° produit] [nchar](120) NOT NULL,
+	[quantitef] [int] NULL,
+	[qte_collisf] [int] NULL,
+	[prixvf] [float] NULL,
+ CONSTRAINT [PK_dsortie_facture] PRIMARY KEY CLUSTERED 
+(
+	[n° sortief] ASC,
+	[n° produit] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dsortieemb]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dsortieemb](
+	[n° sortiemb] [int] NOT NULL,
+	[n° articleemb] [int] NOT NULL,
+	[quantiteemb] [int] NULL,
+ CONSTRAINT [PK_dsortieemb] PRIMARY KEY CLUSTERED 
+(
+	[n° sortiemb] ASC,
+	[n° articleemb] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dsortiem]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dsortiem](
+	[n° sortim] [int] NOT NULL,
+	[n° article] [int] NOT NULL,
+	[quantitem] [int] NULL,
+ CONSTRAINT [PK__dsortiem__BF198EB9828DEE3F] PRIMARY KEY CLUSTERED 
+(
+	[n° sortim] ASC,
+	[n° article] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ecaisse]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ecaisse](
+	[n_entree] [int] IDENTITY(1,1) NOT NULL,
+	[libelle] [nchar](500) NOT NULL,
+	[prix] [float] NOT NULL,
+	[dh] [smalldatetime] NOT NULL,
+ CONSTRAINT [PK_ecaisse] PRIMARY KEY CLUSTERED 
+(
+	[n_entree] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[echquecaisse]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[echquecaisse](
+	[n_entree] [int] IDENTITY(1,1) NOT NULL,
+	[libelle] [nchar](500) NOT NULL,
+	[n_cheque] [nchar](100) NOT NULL,
+	[prix] [float] NOT NULL,
+	[dhc] [smalldatetime] NOT NULL,
+ CONSTRAINT [PK_echquecaisse] PRIMARY KEY CLUSTERED 
+(
+	[n_entree] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[entree]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[entree](
+	[n° entree] [int] IDENTITY(1,1) NOT NULL,
+	[date entree] [date] NULL,
+	[epe] [nchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[n° entree] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[entreeemb]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[entreeemb](
+	[n° entreeemb] [int] IDENTITY(1,1) NOT NULL,
+	[type pieceemb] [varchar](30) NULL,
+	[n° pieceemb] [varchar](30) NULL,
+	[date entreeemb] [date] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[n° entreeemb] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[entreeg]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[entreeg](
+	[n°entree] [int] IDENTITY(1,1) NOT NULL,
+	[type dentree] [nchar](30) NULL,
+	[type piece] [nchar](30) NULL,
+	[n° piece] [nchar](50) NULL,
+	[date entree] [date] NULL,
+	[entree par] [nchar](50) NULL,
+	[nombre cheque] [int] NULL,
+ CONSTRAINT [PK_entreeg] PRIMARY KEY CLUSTERED 
+(
+	[n°entree] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[entreem]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[entreem](
+	[n° entreem] [int] IDENTITY(1,1) NOT NULL,
+	[type piecem] [varchar](30) NULL,
+	[n° piecem] [varchar](30) NULL,
+	[date entreem] [date] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[n° entreem] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[epiece_rechange]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[epiece_rechange](
+	[n_ref] [nchar](100) NOT NULL,
+	[nom_piece] [nchar](200) NULL,
+	[qte] [int] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[fournisseur]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[fournisseur](
+	[n° fournisseur] [int] IDENTITY(1,1) NOT NULL,
+	[denomination] [varchar](120) NULL,
+	[responsable] [varchar](120) NULL,
+	[n° ice] [varchar](120) NULL,
+	[n° telephone] [varchar](120) NULL,
+	[email] [varchar](120) NULL,
+	[siege social] [varchar](250) NULL,
+	[ville] [varchar](120) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[n° fournisseur] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[machine]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[machine](
+	[nm] [int] IDENTITY(1,1) NOT NULL,
+	[n_machine] [nchar](50) NOT NULL,
+	[reference_cylindre] [nchar](100) NULL,
+	[aiguille] [int] NULL,
+ CONSTRAINT [PK_machine] PRIMARY KEY CLUSTERED 
+(
+	[nm] ASC,
+	[n_machine] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[objectif_machine]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[objectif_machine](
+	[nom] [int] IDENTITY(1,1) NOT NULL,
+	[n_machine] [nchar](50) NULL,
+	[objectif_pchoix] [int] NULL,
+	[objectif_dchoix] [int] NULL,
+	[hours] [nchar](100) NULL,
+	[date] [date] NULL,
+ CONSTRAINT [PK_objectif_machine] PRIMARY KEY CLUSTERED 
+(
+	[nom] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[personel]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[personel](
+	[n_pers] [int] IDENTITY(1,1) NOT NULL,
+	[nom_comp] [nchar](100) NOT NULL,
+ CONSTRAINT [PK_personel] PRIMARY KEY CLUSTERED 
+(
+	[n_pers] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[piece_rechange]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[piece_rechange](
+	[n_ref] [nchar](100) NOT NULL,
+	[nom_piece] [nchar](200) NULL,
+	[stock] [int] NULL,
+	[prix_achat] [float] NULL,
+	[tatva] [float] NULL,
+ CONSTRAINT [PK_piece_rechange] PRIMARY KEY CLUSTERED 
+(
+	[n_ref] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[produits]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[produits](
+	[n° produit] [int] IDENTITY(1,1) NOT NULL,
+	[n° reference] [varchar](120) NULL,
+	[nom produit] [varchar](120) NOT NULL,
+	[colour] [nchar](50) NULL,
+	[taille] [nchar](50) NULL,
+	[stock] [varchar](120) NULL,
+	[prix venteht] [float] NULL,
+	[taux tva] [float] NULL,
+ CONSTRAINT [PK__produits__C6E9356BDC4D734D] PRIMARY KEY CLUSTERED 
+(
+	[n° produit] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[produitsem]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[produitsem](
+	[n° produitem] [int] IDENTITY(1,1) NOT NULL,
+	[n° referenceem] [varchar](120) NULL,
+	[nom produitem] [varchar](120) NOT NULL,
+	[stockem] [varchar](120) NULL,
+	[prix achathtem] [float] NULL,
+	[taux tvaem] [float] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[n° produitem] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[produitsm]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[produitsm](
+	[n° produitm] [int] IDENTITY(1,1) NOT NULL,
+	[n° referencem] [varchar](120) NULL,
+	[nom produitm] [varchar](120) NOT NULL,
+	[stockm] [varchar](120) NULL,
+	[prix achathtm] [float] NULL,
+	[taux tvam] [float] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[n° produitm] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ref_aiguille]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ref_aiguille](
+	[n_machine] [int] NOT NULL,
+	[reference] [nchar](100) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[reglement]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[reglement](
+	[n° fournisseur] [int] NULL,
+	[n° cheque] [nchar](200) NULL,
+	[date reglement] [date] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[scaisse]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[scaisse](
+	[n_sortie] [int] IDENTITY(1,1) NOT NULL,
+	[libelle] [nchar](500) NOT NULL,
+	[prix] [float] NOT NULL,
+	[dh] [smalldatetime] NOT NULL,
+ CONSTRAINT [PK_scaisse] PRIMARY KEY CLUSTERED 
+(
+	[n_sortie] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[schequecaisse]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[schequecaisse](
+	[n_sortie] [int] IDENTITY(1,1) NOT NULL,
+	[libelle] [nchar](500) NOT NULL,
+	[n_cheque] [nchar](100) NOT NULL,
+	[prix] [float] NOT NULL,
+	[dhc] [smalldatetime] NOT NULL,
+ CONSTRAINT [PK_schquecaisse] PRIMARY KEY CLUSTERED 
+(
+	[n_sortie] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[sortie]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[sortie](
+	[n° sortie] [int] IDENTITY(1,1) NOT NULL,
+	[type piece] [varchar](30) NULL,
+	[n° piece] [varchar](30) NULL,
+	[date sortie] [date] NULL,
+	[sp] [nchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[n° sortie] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[sortie_bon]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[sortie_bon](
+	[n° sortieb] [int] IDENTITY(1,1) NOT NULL,
+	[type piece] [varchar](30) NULL,
+	[nc] [nchar](100) NOT NULL,
+	[date sortie] [date] NULL,
+	[mdpb] [nchar](50) NULL,
+	[dp] [nchar](50) NULL,
+	[sp] [nchar](50) NULL,
+	[nb] [nchar](100) NULL,
+	[regb] [int] NULL,
+ CONSTRAINT [PK_sortie_bon] PRIMARY KEY CLUSTERED 
+(
+	[n° sortieb] ASC,
+	[nc] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[sortie_facture]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[sortie_facture](
+	[n° sortief] [int] IDENTITY(1,1) NOT NULL,
+	[type piece] [varchar](30) NULL,
+	[nc] [nchar](100) NOT NULL,
+	[date sortief] [date] NULL,
+	[mdp] [nchar](50) NULL,
+	[dp] [nchar](50) NULL,
+	[sp] [nchar](50) NULL,
+	[nf] [nchar](100) NULL,
+	[regf] [int] NULL,
+ CONSTRAINT [PK_sortie_facture] PRIMARY KEY CLUSTERED 
+(
+	[n° sortief] ASC,
+	[nc] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[sortieemb]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[sortieemb](
+	[n° sortieemb] [int] IDENTITY(1,1) NOT NULL,
+	[date sortieemb] [date] NULL,
+	[sortieemb par] [nchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[n° sortieemb] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[sortiem]    Script Date: 18/11/2023 19:37:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[sortiem](
+	[n° sortiem] [int] IDENTITY(1,1) NOT NULL,
+	[type piecem] [varchar](30) NULL,
+	[n° piecem] [varchar](30) NULL,
+	[date sortiem] [date] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[n° sortiem] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[caisse] ADD  CONSTRAINT [DF_caisse_montant]  DEFAULT ((0)) FOR [montant]
+GO
+ALTER TABLE [dbo].[cheque] ADD  CONSTRAINT [DF_cheque_etat paiement]  DEFAULT ((1)) FOR [etat paiement]
+GO
+ALTER TABLE [dbo].[dentreem]  WITH CHECK ADD  CONSTRAINT [FK_dentreem_entreem1] FOREIGN KEY([n° entrem])
+REFERENCES [dbo].[entreem] ([n° entreem])
+GO
+ALTER TABLE [dbo].[dentreem] CHECK CONSTRAINT [FK_dentreem_entreem1]
+GO
+ALTER TABLE [dbo].[dentreem]  WITH CHECK ADD  CONSTRAINT [FK_dentreem_produitsm1] FOREIGN KEY([n° produitm])
+REFERENCES [dbo].[produitsm] ([n° produitm])
+GO
+ALTER TABLE [dbo].[dentreem] CHECK CONSTRAINT [FK_dentreem_produitsm1]
+GO
+ALTER TABLE [dbo].[dsortie]  WITH CHECK ADD  CONSTRAINT [FK_dsortie_produits] FOREIGN KEY([n° produit])
+REFERENCES [dbo].[produits] ([n° produit])
+GO
+ALTER TABLE [dbo].[dsortie] CHECK CONSTRAINT [FK_dsortie_produits]
+GO
+ALTER TABLE [dbo].[dsortie]  WITH CHECK ADD  CONSTRAINT [FK_dsortie_sortie] FOREIGN KEY([n° sorti])
+REFERENCES [dbo].[sortie] ([n° sortie])
+GO
+ALTER TABLE [dbo].[dsortie] CHECK CONSTRAINT [FK_dsortie_sortie]
+GO
+insert into caisse (montant) values (0)
+insert into chequeCaisse (montant) values (0)
+ALTER DATABASE [fdstock] SET  READ_WRITE 
+GO
+
