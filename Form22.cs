@@ -130,7 +130,7 @@ namespace FD_STOCK
                         sw.Write(tableau.Columns[i].HeaderText);
                         if (i < tableau.Columns.Count - 1)
                         {
-                            sw.Write(",");
+                            sw.Write(";");
                         }
                     }
                     sw.WriteLine();
@@ -143,7 +143,7 @@ namespace FD_STOCK
                             sw.Write(row.Cells[i].Value);
                             if (i < tableau.Columns.Count - 1)
                             {
-                                sw.Write(",");
+                                sw.Write(";");
                             }
                         }
                         sw.WriteLine();

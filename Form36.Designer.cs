@@ -40,10 +40,6 @@ namespace FD_STOCK
             this.panel6 = new System.Windows.Forms.Panel();
             this.button16 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.reglementpanel = new System.Windows.Forms.Panel();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.caissepanel = new System.Windows.Forms.Panel();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -71,11 +67,15 @@ namespace FD_STOCK
             this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.machinepanel = new System.Windows.Forms.Panel();
+            this.button17 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.fournisseurpanel = new System.Windows.Forms.Panel();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -95,7 +95,6 @@ namespace FD_STOCK
             this.panelContent = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.reglementpanel.SuspendLayout();
             this.caissepanel.SuspendLayout();
             this.produitpanel.SuspendLayout();
             this.panelentreegeneral.SuspendLayout();
@@ -125,23 +124,23 @@ namespace FD_STOCK
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 6);
+            this.label2.Location = new System.Drawing.Point(2, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(181, 20);
+            this.label2.Size = new System.Drawing.Size(169, 18);
             this.label2.TabIndex = 2;
-            this.label2.Text = "DMRproduction V 0.6";
+            this.label2.Text = "DMRproduction V 2.0";
             // 
             // user
             // 
             this.user.AutoSize = true;
-            this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.user.ForeColor = System.Drawing.Color.White;
-            this.user.Location = new System.Drawing.Point(1049, 3);
+            this.user.Location = new System.Drawing.Point(1052, 7);
             this.user.Name = "user";
             this.user.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.user.Size = new System.Drawing.Size(116, 24);
+            this.user.Size = new System.Drawing.Size(99, 18);
             this.user.TabIndex = 2;
             this.user.Text = "Utilisateur";
             this.user.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -209,8 +208,6 @@ namespace FD_STOCK
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
             this.panel6.Controls.Add(this.button16);
             this.panel6.Controls.Add(this.button13);
-            this.panel6.Controls.Add(this.reglementpanel);
-            this.panel6.Controls.Add(this.button9);
             this.panel6.Controls.Add(this.caissepanel);
             this.panel6.Controls.Add(this.button21);
             this.panel6.Controls.Add(this.produitpanel);
@@ -237,13 +234,13 @@ namespace FD_STOCK
             // 
             // button16
             // 
-            this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(46)))), ((int)(((byte)(27)))));
+            this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
             this.button16.Dock = System.Windows.Forms.DockStyle.Top;
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button16.ForeColor = System.Drawing.Color.White;
-            this.button16.Location = new System.Drawing.Point(0, 1455);
+            this.button16.Location = new System.Drawing.Point(0, 1488);
             this.button16.Name = "button16";
             this.button16.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.button16.Size = new System.Drawing.Size(213, 30);
@@ -255,13 +252,13 @@ namespace FD_STOCK
             // 
             // button13
             // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
+            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(46)))), ((int)(((byte)(27)))));
             this.button13.Dock = System.Windows.Forms.DockStyle.Top;
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(0, 1425);
+            this.button13.Location = new System.Drawing.Point(0, 1458);
             this.button13.Name = "button13";
             this.button13.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.button13.Size = new System.Drawing.Size(213, 30);
@@ -271,71 +268,6 @@ namespace FD_STOCK
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click_1);
             // 
-            // reglementpanel
-            // 
-            this.reglementpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(46)))), ((int)(((byte)(27)))));
-            this.reglementpanel.Controls.Add(this.button14);
-            this.reglementpanel.Controls.Add(this.button15);
-            this.reglementpanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.reglementpanel.Location = new System.Drawing.Point(0, 1365);
-            this.reglementpanel.Name = "reglementpanel";
-            this.reglementpanel.Size = new System.Drawing.Size(213, 60);
-            this.reglementpanel.TabIndex = 50;
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(46)))), ((int)(((byte)(27)))));
-            this.button14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button14.Location = new System.Drawing.Point(0, 28);
-            this.button14.Name = "button14";
-            this.button14.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button14.Size = new System.Drawing.Size(213, 28);
-            this.button14.TabIndex = 9;
-            this.button14.Text = "Liste détaille réglement";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click_1);
-            // 
-            // button15
-            // 
-            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(46)))), ((int)(((byte)(27)))));
-            this.button15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button15.Location = new System.Drawing.Point(0, 0);
-            this.button15.Name = "button15";
-            this.button15.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button15.Size = new System.Drawing.Size(213, 28);
-            this.button15.TabIndex = 8;
-            this.button15.Text = "Réglement ";
-            this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.button15_Click_1);
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(46)))), ((int)(((byte)(27)))));
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(0, 1335);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(213, 30);
-            this.button9.TabIndex = 49;
-            this.button9.Text = "Gestion réglement";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click_1);
-            // 
             // caissepanel
             // 
             this.caissepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
@@ -344,7 +276,7 @@ namespace FD_STOCK
             this.caissepanel.Controls.Add(this.button22);
             this.caissepanel.Controls.Add(this.button23);
             this.caissepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.caissepanel.Location = new System.Drawing.Point(0, 1220);
+            this.caissepanel.Location = new System.Drawing.Point(0, 1343);
             this.caissepanel.Name = "caissepanel";
             this.caissepanel.Size = new System.Drawing.Size(213, 115);
             this.caissepanel.TabIndex = 48;
@@ -429,7 +361,7 @@ namespace FD_STOCK
             this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button21.ForeColor = System.Drawing.Color.White;
-            this.button21.Location = new System.Drawing.Point(0, 1190);
+            this.button21.Location = new System.Drawing.Point(0, 1313);
             this.button21.Name = "button21";
             this.button21.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.button21.Size = new System.Drawing.Size(213, 30);
@@ -449,7 +381,7 @@ namespace FD_STOCK
             this.produitpanel.Controls.Add(this.button52);
             this.produitpanel.Controls.Add(this.button53);
             this.produitpanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.produitpanel.Location = new System.Drawing.Point(0, 1016);
+            this.produitpanel.Location = new System.Drawing.Point(0, 1139);
             this.produitpanel.Name = "produitpanel";
             this.produitpanel.Size = new System.Drawing.Size(213, 174);
             this.produitpanel.TabIndex = 46;
@@ -570,7 +502,7 @@ namespace FD_STOCK
             this.button45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button45.ForeColor = System.Drawing.Color.White;
-            this.button45.Location = new System.Drawing.Point(0, 986);
+            this.button45.Location = new System.Drawing.Point(0, 1109);
             this.button45.Name = "button45";
             this.button45.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.button45.Size = new System.Drawing.Size(213, 30);
@@ -590,7 +522,7 @@ namespace FD_STOCK
             this.panelentreegeneral.Controls.Add(this.button38);
             this.panelentreegeneral.Controls.Add(this.button39);
             this.panelentreegeneral.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelentreegeneral.Location = new System.Drawing.Point(0, 811);
+            this.panelentreegeneral.Location = new System.Drawing.Point(0, 934);
             this.panelentreegeneral.Name = "panelentreegeneral";
             this.panelentreegeneral.Size = new System.Drawing.Size(213, 175);
             this.panelentreegeneral.TabIndex = 40;
@@ -608,7 +540,7 @@ namespace FD_STOCK
             this.button8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button8.Size = new System.Drawing.Size(213, 28);
             this.button8.TabIndex = 13;
-            this.button8.Text = "Liste sortie emballage";
+            this.button8.Text = "Liste sortie";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click_1);
@@ -626,7 +558,7 @@ namespace FD_STOCK
             this.button7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button7.Size = new System.Drawing.Size(213, 28);
             this.button7.TabIndex = 12;
-            this.button7.Text = "Sortie emballage";
+            this.button7.Text = "Nouvelle sortie";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click_1);
@@ -711,7 +643,7 @@ namespace FD_STOCK
             this.button44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button44.ForeColor = System.Drawing.Color.White;
-            this.button44.Location = new System.Drawing.Point(0, 781);
+            this.button44.Location = new System.Drawing.Point(0, 904);
             this.button44.Name = "button44";
             this.button44.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.button44.Size = new System.Drawing.Size(213, 30);
@@ -727,7 +659,7 @@ namespace FD_STOCK
             this.articlepanel.Controls.Add(this.button5);
             this.articlepanel.Controls.Add(this.button6);
             this.articlepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.articlepanel.Location = new System.Drawing.Point(0, 722);
+            this.articlepanel.Location = new System.Drawing.Point(0, 845);
             this.articlepanel.Name = "articlepanel";
             this.articlepanel.Size = new System.Drawing.Size(213, 59);
             this.articlepanel.TabIndex = 34;
@@ -776,7 +708,7 @@ namespace FD_STOCK
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 692);
+            this.button4.Location = new System.Drawing.Point(0, 815);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(213, 30);
@@ -788,14 +720,33 @@ namespace FD_STOCK
             // 
             // machinepanel
             // 
+            this.machinepanel.Controls.Add(this.button17);
             this.machinepanel.Controls.Add(this.button10);
             this.machinepanel.Controls.Add(this.button30);
             this.machinepanel.Controls.Add(this.button31);
             this.machinepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.machinepanel.Location = new System.Drawing.Point(0, 601);
+            this.machinepanel.Location = new System.Drawing.Point(0, 696);
             this.machinepanel.Name = "machinepanel";
-            this.machinepanel.Size = new System.Drawing.Size(213, 91);
+            this.machinepanel.Size = new System.Drawing.Size(213, 119);
             this.machinepanel.TabIndex = 30;
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
+            this.button17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button17.FlatAppearance.BorderSize = 0;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button17.Location = new System.Drawing.Point(0, 84);
+            this.button17.Name = "button17";
+            this.button17.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button17.Size = new System.Drawing.Size(213, 28);
+            this.button17.TabIndex = 6;
+            this.button17.Text = "Consomation machine";
+            this.button17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click_2);
             // 
             // button10
             // 
@@ -859,7 +810,7 @@ namespace FD_STOCK
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button25.ForeColor = System.Drawing.Color.White;
-            this.button25.Location = new System.Drawing.Point(0, 571);
+            this.button25.Location = new System.Drawing.Point(0, 666);
             this.button25.Name = "button25";
             this.button25.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.button25.Size = new System.Drawing.Size(213, 30);
@@ -871,13 +822,70 @@ namespace FD_STOCK
             // 
             // fournisseurpanel
             // 
+            this.fournisseurpanel.Controls.Add(this.button14);
+            this.fournisseurpanel.Controls.Add(this.button15);
+            this.fournisseurpanel.Controls.Add(this.button19);
             this.fournisseurpanel.Controls.Add(this.button2);
             this.fournisseurpanel.Controls.Add(this.button3);
             this.fournisseurpanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.fournisseurpanel.Location = new System.Drawing.Point(0, 511);
             this.fournisseurpanel.Name = "fournisseurpanel";
-            this.fournisseurpanel.Size = new System.Drawing.Size(213, 60);
+            this.fournisseurpanel.Size = new System.Drawing.Size(213, 155);
             this.fournisseurpanel.TabIndex = 28;
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(46)))), ((int)(((byte)(27)))));
+            this.button14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button14.Location = new System.Drawing.Point(0, 116);
+            this.button14.Name = "button14";
+            this.button14.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button14.Size = new System.Drawing.Size(213, 28);
+            this.button14.TabIndex = 10;
+            this.button14.Text = "Liste détaille réglement";
+            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click_2);
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(46)))), ((int)(((byte)(27)))));
+            this.button15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button15.Location = new System.Drawing.Point(0, 88);
+            this.button15.Name = "button15";
+            this.button15.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button15.Size = new System.Drawing.Size(213, 28);
+            this.button15.TabIndex = 9;
+            this.button15.Text = "Réglement ";
+            this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click_2);
+            // 
+            // button19
+            // 
+            this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(46)))), ((int)(((byte)(27)))));
+            this.button19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button19.FlatAppearance.BorderSize = 0;
+            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button19.Location = new System.Drawing.Point(0, 58);
+            this.button19.Name = "button19";
+            this.button19.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button19.Size = new System.Drawing.Size(213, 30);
+            this.button19.TabIndex = 4;
+            this.button19.Text = "Payment Fournisseur";
+            this.button19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button19.UseVisualStyleBackColor = false;
+            this.button19.Click += new System.EventHandler(this.button19_Click_1);
             // 
             // button2
             // 
@@ -1121,9 +1129,7 @@ namespace FD_STOCK
             // 
             // panelContent
             // 
-            this.panelContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(230, 38);
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(1119, 640);
@@ -1146,12 +1152,10 @@ namespace FD_STOCK
             this.Name = "menur";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form36";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.menur_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
-            this.reglementpanel.ResumeLayout(false);
             this.caissepanel.ResumeLayout(false);
             this.produitpanel.ResumeLayout(false);
             this.panelentreegeneral.ResumeLayout(false);
@@ -1221,10 +1225,6 @@ namespace FD_STOCK
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Panel reglementpanel;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button12;
@@ -1234,5 +1234,9 @@ namespace FD_STOCK
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button16;
         public System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button14;
     }
 }

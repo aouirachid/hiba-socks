@@ -57,100 +57,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="eChequeCaisse.cs">
+    <Compile Include="CAISSE\eChequeCaisse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="eChequeCaisse.Designer.cs">
+    <Compile Include="CAISSE\eChequeCaisse.Designer.cs">
       <DependentUpon>eChequeCaisse.cs</DependentUpon>
     </Compile>
-    <Compile Include="ePieceRechange.cs">
+    <Compile Include="COMPOSANT\listSortieComposant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ePieceRechange.Designer.cs">
-      <DependentUpon>ePieceRechange.cs</DependentUpon>
+    <Compile Include="COMPOSANT\listSortieComposant.Designer.cs">
+      <DependentUpon>listSortieComposant.cs</DependentUpon>
     </Compile>
-    <Compile Include="facture.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>facture.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="factureImp.cs">
+    <Compile Include="COMPOSANT\sortieComposant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="factureImp.Designer.cs">
-      <DependentUpon>factureImp.cs</DependentUpon>
+    <Compile Include="COMPOSANT\sortieComposant.Designer.cs">
+      <DependentUpon>sortieComposant.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FOURNISSEUR\paymentFournisseur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="FOURNISSEUR\paymentFournisseur.Designer.cs">
+      <DependentUpon>paymentFournisseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MACHINE\consomationMachie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MACHINE\consomationMachie.Designer.cs">
+      <DependentUpon>consomationMachie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUIT\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRODUIT\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form10.cs">
+    <Compile Include="PRODUIT\Form10.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form10.Designer.cs">
+    <Compile Include="PRODUIT\Form10.Designer.cs">
       <DependentUpon>Form10.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form11.cs">
+    <Compile Include="PRODUIT\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form11.Designer.cs">
-      <DependentUpon>Form11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form12.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form12.Designer.cs">
-      <DependentUpon>Form12.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form13.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form13.Designer.cs">
-      <DependentUpon>Form13.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form14.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form14.Designer.cs">
-      <DependentUpon>Form14.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form15.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form15.Designer.cs">
-      <DependentUpon>Form15.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form16.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form16.Designer.cs">
-      <DependentUpon>Form16.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form17.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form17.Designer.cs">
-      <DependentUpon>Form17.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form18.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form18.Designer.cs">
-      <DependentUpon>Form18.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form19.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form19.Designer.cs">
-      <DependentUpon>Form19.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
+    <Compile Include="PRODUIT\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="Form20.cs">
@@ -159,100 +111,88 @@
     <Compile Include="Form20.Designer.cs">
       <DependentUpon>Form20.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form21.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form21.Designer.cs">
-      <DependentUpon>Form21.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form22.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form22.Designer.cs">
       <DependentUpon>Form22.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form23.cs">
+    <Compile Include="MACHINE\Form23.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form23.Designer.cs">
+    <Compile Include="MACHINE\Form23.Designer.cs">
       <DependentUpon>Form23.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form24.cs">
+    <Compile Include="ARTICLE\Form24.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form24.Designer.cs">
+    <Compile Include="ARTICLE\Form24.Designer.cs">
       <DependentUpon>Form24.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form25.cs">
+    <Compile Include="MACHINE\Form25.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form25.Designer.cs">
+    <Compile Include="MACHINE\Form25.Designer.cs">
       <DependentUpon>Form25.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form26.cs">
+    <Compile Include="ARTICLE\Form26.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form26.Designer.cs">
+    <Compile Include="ARTICLE\Form26.Designer.cs">
       <DependentUpon>Form26.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form27.cs">
+    <Compile Include="MACHINE\Form27.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form27.Designer.cs">
+    <Compile Include="MACHINE\Form27.Designer.cs">
       <DependentUpon>Form27.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form28.cs">
+    <Compile Include="CAISSE\Form29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form28.Designer.cs">
-      <DependentUpon>Form28.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form29.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form29.Designer.cs">
+    <Compile Include="CAISSE\Form29.Designer.cs">
       <DependentUpon>Form29.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="CLIENT\Form3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
+    <Compile Include="CLIENT\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form30.cs">
+    <Compile Include="CAISSE\Form30.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form30.Designer.cs">
+    <Compile Include="CAISSE\Form30.Designer.cs">
       <DependentUpon>Form30.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form31.cs">
+    <Compile Include="SALARIER\Form31.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form31.Designer.cs">
+    <Compile Include="SALARIER\Form31.Designer.cs">
       <DependentUpon>Form31.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form32.cs">
+    <Compile Include="SALARIER\Form32.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form32.Designer.cs">
+    <Compile Include="SALARIER\Form32.Designer.cs">
       <DependentUpon>Form32.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form33.cs">
+    <Compile Include="SALARIER\Form33.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form33.Designer.cs">
+    <Compile Include="SALARIER\Form33.Designer.cs">
       <DependentUpon>Form33.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form34.cs">
+    <Compile Include="SALARIER\Form34.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form34.Designer.cs">
+    <Compile Include="SALARIER\Form34.Designer.cs">
       <DependentUpon>Form34.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form35.cs">
+    <Compile Include="MACHINE\Form35.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form35.Designer.cs">
+    <Compile Include="MACHINE\Form35.Designer.cs">
       <DependentUpon>Form35.cs</DependentUpon>
     </Compile>
     <Compile Include="Form36.cs">
@@ -261,70 +201,58 @@
     <Compile Include="Form36.Designer.cs">
       <DependentUpon>Form36.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form37.cs">
+    <Compile Include="UTILISATEUR\Form37.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form37.Designer.cs">
+    <Compile Include="UTILISATEUR\Form37.Designer.cs">
       <DependentUpon>Form37.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form38.cs">
+    <Compile Include="COMPOSANT\Form38.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form38.Designer.cs">
+    <Compile Include="COMPOSANT\Form38.Designer.cs">
       <DependentUpon>Form38.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form39.cs">
+    <Compile Include="FOURNISSEUR\Form39.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form39.Designer.cs">
+    <Compile Include="FOURNISSEUR\Form39.Designer.cs">
       <DependentUpon>Form39.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="CLIENT\Form4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
+    <Compile Include="CLIENT\Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form40.cs">
+    <Compile Include="COMPOSANT\Form40.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form40.Designer.cs">
+    <Compile Include="COMPOSANT\Form40.Designer.cs">
       <DependentUpon>Form40.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form41.cs">
+    <Compile Include="FOURNISSEUR\Form41.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form41.Designer.cs">
+    <Compile Include="FOURNISSEUR\Form41.Designer.cs">
       <DependentUpon>Form41.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form42.cs">
+    <Compile Include="COMPOSANT\Form42.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form42.Designer.cs">
+    <Compile Include="COMPOSANT\Form42.Designer.cs">
       <DependentUpon>Form42.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form43.cs">
+    <Compile Include="COMPOSANT\Form43.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form43.Designer.cs">
+    <Compile Include="COMPOSANT\Form43.Designer.cs">
       <DependentUpon>Form43.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form44.cs">
+    <Compile Include="UTILISATEUR\Form46.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form44.Designer.cs">
-      <DependentUpon>Form44.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form45.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form45.Designer.cs">
-      <DependentUpon>Form45.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form46.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form46.Designer.cs">
+    <Compile Include="UTILISATEUR\Form46.Designer.cs">
       <DependentUpon>Form46.cs</DependentUpon>
     </Compile>
     <Compile Include="Form47.cs">
@@ -333,224 +261,160 @@
     <Compile Include="Form47.Designer.cs">
       <DependentUpon>Form47.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="FOURNISSEUR\Form5.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
+    <Compile Include="FOURNISSEUR\Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form6.cs">
+    <Compile Include="FOURNISSEUR\Form6.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form6.Designer.cs">
+    <Compile Include="FOURNISSEUR\Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form7.cs">
+    <Compile Include="PRODUIT\Form7.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form7.Designer.cs">
+    <Compile Include="PRODUIT\Form7.Designer.cs">
       <DependentUpon>Form7.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form8.cs">
+    <Compile Include="PRODUIT\Form8.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form8.Designer.cs">
+    <Compile Include="PRODUIT\Form8.Designer.cs">
       <DependentUpon>Form8.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form9.cs">
+    <Compile Include="PRODUIT\Form9.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form9.Designer.cs">
+    <Compile Include="PRODUIT\Form9.Designer.cs">
       <DependentUpon>Form9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="listePieceRechange.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="listePieceRechange.Designer.cs">
-      <DependentUpon>listePieceRechange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MDIParent1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MDIParent1.Designer.cs">
-      <DependentUpon>MDIParent1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MDIParent2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MDIParent2.Designer.cs">
-      <DependentUpon>MDIParent2.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sChequeCaisse.cs">
+    <Compile Include="CAISSE\sChequeCaisse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sChequeCaisse.Designer.cs">
+    <Compile Include="CAISSE\sChequeCaisse.Designer.cs">
       <DependentUpon>sChequeCaisse.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="eChequeCaisse.resx">
+    <EmbeddedResource Include="CAISSE\eChequeCaisse.resx">
       <DependentUpon>eChequeCaisse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ePieceRechange.resx">
-      <DependentUpon>ePieceRechange.cs</DependentUpon>
+    <EmbeddedResource Include="COMPOSANT\listSortieComposant.resx">
+      <DependentUpon>listSortieComposant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="facture.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>facture.cs</LastGenOutput>
+    <EmbeddedResource Include="COMPOSANT\sortieComposant.resx">
+      <DependentUpon>sortieComposant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="factureImp.resx">
-      <DependentUpon>factureImp.cs</DependentUpon>
+    <EmbeddedResource Include="FOURNISSEUR\paymentFournisseur.resx">
+      <DependentUpon>paymentFournisseur.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="MACHINE\consomationMachie.resx">
+      <DependentUpon>consomationMachie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUIT\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form10.resx">
+    <EmbeddedResource Include="PRODUIT\Form10.resx">
       <DependentUpon>Form10.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form11.resx">
-      <DependentUpon>Form11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form12.resx">
-      <DependentUpon>Form12.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form13.resx">
-      <DependentUpon>Form13.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form14.resx">
-      <DependentUpon>Form14.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form15.resx">
-      <DependentUpon>Form15.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form16.resx">
-      <DependentUpon>Form16.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form17.resx">
-      <DependentUpon>Form17.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form18.resx">
-      <DependentUpon>Form18.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form19.resx">
-      <DependentUpon>Form19.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
+    <EmbeddedResource Include="PRODUIT\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form20.resx">
       <DependentUpon>Form20.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form21.resx">
-      <DependentUpon>Form21.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form22.resx">
       <DependentUpon>Form22.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form23.resx">
+    <EmbeddedResource Include="MACHINE\Form23.resx">
       <DependentUpon>Form23.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form24.resx">
+    <EmbeddedResource Include="ARTICLE\Form24.resx">
       <DependentUpon>Form24.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form25.resx">
+    <EmbeddedResource Include="MACHINE\Form25.resx">
       <DependentUpon>Form25.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form26.resx">
+    <EmbeddedResource Include="ARTICLE\Form26.resx">
       <DependentUpon>Form26.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form27.resx">
+    <EmbeddedResource Include="MACHINE\Form27.resx">
       <DependentUpon>Form27.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form28.resx">
-      <DependentUpon>Form28.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form29.resx">
+    <EmbeddedResource Include="CAISSE\Form29.resx">
       <DependentUpon>Form29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
+    <EmbeddedResource Include="CLIENT\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form30.resx">
+    <EmbeddedResource Include="CAISSE\Form30.resx">
       <DependentUpon>Form30.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form31.resx">
+    <EmbeddedResource Include="SALARIER\Form31.resx">
       <DependentUpon>Form31.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form32.resx">
+    <EmbeddedResource Include="SALARIER\Form32.resx">
       <DependentUpon>Form32.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form33.resx">
+    <EmbeddedResource Include="SALARIER\Form33.resx">
       <DependentUpon>Form33.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form34.resx">
+    <EmbeddedResource Include="SALARIER\Form34.resx">
       <DependentUpon>Form34.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form35.resx">
+    <EmbeddedResource Include="MACHINE\Form35.resx">
       <DependentUpon>Form35.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form36.resx">
       <DependentUpon>Form36.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form37.resx">
+    <EmbeddedResource Include="UTILISATEUR\Form37.resx">
       <DependentUpon>Form37.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form38.resx">
+    <EmbeddedResource Include="COMPOSANT\Form38.resx">
       <DependentUpon>Form38.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form39.resx">
+    <EmbeddedResource Include="FOURNISSEUR\Form39.resx">
       <DependentUpon>Form39.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
+    <EmbeddedResource Include="CLIENT\Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form40.resx">
+    <EmbeddedResource Include="COMPOSANT\Form40.resx">
       <DependentUpon>Form40.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form41.resx">
+    <EmbeddedResource Include="FOURNISSEUR\Form41.resx">
       <DependentUpon>Form41.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form42.resx">
+    <EmbeddedResource Include="COMPOSANT\Form42.resx">
       <DependentUpon>Form42.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form43.resx">
+    <EmbeddedResource Include="COMPOSANT\Form43.resx">
       <DependentUpon>Form43.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form44.resx">
-      <DependentUpon>Form44.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form45.resx">
-      <DependentUpon>Form45.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form46.resx">
+    <EmbeddedResource Include="UTILISATEUR\Form46.resx">
       <DependentUpon>Form46.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form47.resx">
       <DependentUpon>Form47.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
+    <EmbeddedResource Include="FOURNISSEUR\Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
+    <EmbeddedResource Include="FOURNISSEUR\Form6.resx">
       <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form7.resx">
+    <EmbeddedResource Include="PRODUIT\Form7.resx">
       <DependentUpon>Form7.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form8.resx">
+    <EmbeddedResource Include="PRODUIT\Form8.resx">
       <DependentUpon>Form8.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form9.resx">
+    <EmbeddedResource Include="PRODUIT\Form9.resx">
       <DependentUpon>Form9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="listePieceRechange.resx">
-      <DependentUpon>listePieceRechange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MDIParent1.resx">
-      <DependentUpon>MDIParent1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MDIParent2.resx">
-      <DependentUpon>MDIParent2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -562,7 +426,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="sChequeCaisse.resx">
+    <EmbeddedResource Include="CAISSE\sChequeCaisse.resx">
       <DependentUpon>sChequeCaisse.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

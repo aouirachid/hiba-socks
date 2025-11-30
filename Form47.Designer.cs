@@ -72,6 +72,7 @@ namespace FD_STOCK
             // 
             this.button36.BackColor = System.Drawing.SystemColors.Control;
             this.button36.FlatAppearance.BorderSize = 0;
+            this.button36.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
             this.button36.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.button36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button36.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,6 +90,7 @@ namespace FD_STOCK
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

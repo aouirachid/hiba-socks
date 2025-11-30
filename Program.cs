@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FD_STOCK.COMPOSANT;
+using FD_STOCK.FOURNISSEUR;
+using FD_STOCK.MACHINE;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -39,9 +42,9 @@ namespace FD_STOCK
             // Application.Run(new nsemb());
             // Application.Run(new lsem());
             // Application.Run(new MDIParent1());
-            // Application.Run(new menu());
-           //  Application.Run(new menur());
-            Application.Run(new conx());
+            //Application.Run(new paymentFournisseur());
+            Application.Run(new menur());
+            //Application.Run(new conx());
             //Application.Run(new utilisateur());
             //Application.Run(new listePieceRechange());
             // Application.Run(new nmach());

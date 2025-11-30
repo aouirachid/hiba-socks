@@ -59,28 +59,16 @@ C:\Users\berda\source\repos\FD STOCK\obj\Debug\FD_STOCK.lsg.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\bin\Debug\FD STOCK.exe.config
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\bin\Debug\FD STOCK.exe
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.AssemblyReference.cache
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ePieceRechange.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.np.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ls.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nem.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nm.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lm.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lem.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lsm.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nsm.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nemb.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lemb.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.neemb.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lp.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nsemb.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.leemb.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lsem.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nmach.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nart.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.dmach.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.la.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lmach.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.prech.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ca.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nc.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.cas.resources
@@ -97,16 +85,11 @@ C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.leg.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ldf.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.npg.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lpg.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.sg.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lsg.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nf.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lf.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ne.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.le.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ns.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.listePieceRechange.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.MDIParent1.resources
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.MDIParent2.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.Properties.Resources.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.GenerateResource.cache
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.CoreCompileInputs.cache
@@ -133,86 +116,203 @@ C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.Repor
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\bin\Debug\stdole.dll
-C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.factureImp.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.CopyComplete
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.utilisateur.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.dmrprog.resources
 C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.ResolveComReference.cache
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\FD STOCK.exe.config
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\FD STOCK.exe
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\FD STOCK.pdb
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
-F:\VERSION FINAL HIBA SOCKS\bin\Debug\stdole.dll
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.AssemblyReference.cache
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.ResolveComReference.cache
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ecc.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ePieceRechange.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.factureImp.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.np.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ls.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nem.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nm.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lm.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lem.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lsm.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nsm.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nemb.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lemb.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.neemb.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lp.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nsemb.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.leemb.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lsem.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nmach.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nart.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.dmach.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.la.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lmach.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.prech.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ca.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nc.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.cas.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.pers.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.dpers.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lpers.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ldpers.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.om.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.menur.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.conx.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.eg.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.regl.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lc.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.leg.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ldf.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.npg.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lpg.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.sg.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lsg.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.utilisateur.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.dmrprog.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nf.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lf.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ne.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.le.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ns.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.listePieceRechange.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.MDIParent1.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.MDIParent2.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.Properties.Resources.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.scc.resources
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.GenerateResource.cache
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.CoreCompileInputs.cache
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.CopyComplete
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.exe
-F:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.pdb
+C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.MACHINE.consomationMachie.resources
+C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.COMPOSANT.sortieComposant.resources
+C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.COMPOSANT.listSortieComposant.resources
+C:\Users\berda\Desktop\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.FOURNISSEUR.paymentFournisseur.resources
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\FD STOCK.exe.config
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\FD STOCK.exe
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\FD STOCK.pdb
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+I:\VERSION FINAL HIBA SOCKS\bin\Debug\stdole.dll
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.AssemblyReference.cache
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.ResolveComReference.cache
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ecc.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.COMPOSANT.listSortieComposant.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.COMPOSANT.sortieComposant.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.FOURNISSEUR.paymentFournisseur.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.MACHINE.consomationMachie.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.np.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ls.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lp.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nsemb.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lsem.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nmach.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nart.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.dmach.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.la.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lmach.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ca.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nc.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.cas.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.pers.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.dpers.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lpers.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ldpers.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.om.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.menur.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.conx.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.eg.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.regl.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lc.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.leg.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ldf.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.npg.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lpg.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.utilisateur.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.dmrprog.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.nf.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.lf.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ne.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.le.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.ns.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.Properties.Resources.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD_STOCK.scc.resources
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.GenerateResource.cache
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.CoreCompileInputs.cache
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.csproj.CopyComplete
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.exe
+I:\VERSION FINAL HIBA SOCKS\obj\Debug\FD STOCK.pdb
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\FD STOCK.exe.config
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\FD STOCK.exe
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\FD STOCK.pdb
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\bin\Debug\stdole.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.csproj.ResolveComReference.cache
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ecc.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.COMPOSANT.listSortieComposant.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.COMPOSANT.sortieComposant.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.FOURNISSEUR.paymentFournisseur.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.MACHINE.consomationMachie.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.np.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ls.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lp.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.nsemb.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lsem.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.nmach.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.nart.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.dmach.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.la.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lmach.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ca.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.nc.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.cas.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.pers.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.dpers.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lpers.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ldpers.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.om.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.menur.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.conx.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.eg.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.regl.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lc.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.leg.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ldf.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.npg.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lpg.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.utilisateur.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.dmrprog.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.nf.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lf.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ne.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.le.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ns.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.Properties.Resources.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.scc.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.csproj.GenerateResource.cache
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.csproj.CopyComplete
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.exe
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.pdb
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\FD STOCK.exe.config
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\FD STOCK.exe
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\FD STOCK.pdb
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\bin\Debug\stdole.dll
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.csproj.ResolveComReference.cache
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ecc.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.COMPOSANT.listSortieComposant.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.COMPOSANT.sortieComposant.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.FOURNISSEUR.paymentFournisseur.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.MACHINE.consomationMachie.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.np.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ls.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lp.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.nsemb.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lsem.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.nmach.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.nart.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.dmach.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.la.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lmach.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ca.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.nc.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.cas.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.pers.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.dpers.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lpers.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ldpers.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.om.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.menur.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.conx.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.eg.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.regl.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lc.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.leg.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ldf.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.npg.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lpg.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.utilisateur.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.dmrprog.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.nf.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.lf.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ne.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.le.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.ns.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.Properties.Resources.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD_STOCK.scc.resources
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.csproj.GenerateResource.cache
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.csproj.CopyComplete
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.exe
+C:\Users\DELL\Desktop\Nouveau dossier\DMRPROG\APP DMRPROG 2024\APP 2025\HIBA SOCKS V 2.0\obj\Debug\FD STOCK.pdb

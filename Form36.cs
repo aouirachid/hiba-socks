@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FD_STOCK.COMPOSANT;
+using FD_STOCK.FOURNISSEUR;
+using FD_STOCK.MACHINE;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +35,7 @@ namespace FD_STOCK
             salarierpanel.Visible = false;
             caissepanel.Visible = false;
             panelentreegeneral.Visible = false;
-            reglementpanel.Visible = false;
+           
         }
         private void hideSubMenu()
         {
@@ -53,8 +56,7 @@ namespace FD_STOCK
                 caissepanel.Visible = false;
             if (panelentreegeneral.Visible == true)
                 panelentreegeneral.Visible = false;
-            if (reglementpanel.Visible == true)
-                reglementpanel.Visible = false;
+       
             
         }
         private void showSubMenu(Panel subMenu)
@@ -1221,7 +1223,7 @@ namespace FD_STOCK
             Form currentForm = panelContent.Controls.OfType<Form>().FirstOrDefault();
 
             // If the current form is the form that the user wants to open, ignore the action.
-            if (currentForm is nsemb)
+            if (currentForm is sortieComposant)
             {
                 return;
             }
@@ -1233,7 +1235,7 @@ namespace FD_STOCK
             }
 
             // Create a new instance of the form that the user wants to open.
-            nsemb a = new nsemb();
+            sortieComposant a = new sortieComposant();
 
             // Set the TopLevel property to false so that the form will be displayed in the panelContent panel.
             a.TopLevel = false;
@@ -1243,7 +1245,7 @@ namespace FD_STOCK
 
             // Bring the form to the front of the panelContent panel.
             a.BringToFront();
-            a.epe.Text = uti;
+            a.sp.Text = uti;
 
             // Show the form.
             a.Show();
@@ -1262,7 +1264,7 @@ namespace FD_STOCK
             Form currentForm = panelContent.Controls.OfType<Form>().FirstOrDefault();
 
             // If the current form is the form that the user wants to open, ignore the action.
-            if (currentForm is lsem)
+            if (currentForm is listSortieComposant)
             {
                 return;
             }
@@ -1274,7 +1276,7 @@ namespace FD_STOCK
             }
 
             // Create a new instance of the form that the user wants to open.
-            lsem a = new lsem();
+            listSortieComposant a = new listSortieComposant();
 
             // Set the TopLevel property to false so that the form will be displayed in the panelContent panel.
             a.TopLevel = false;
@@ -1291,17 +1293,12 @@ namespace FD_STOCK
 
         private void button9_Click_1(object sender, EventArgs e)
         {
-            showSubMenu(reglementpanel);
+         
         }
 
         private void button15_Click_1(object sender, EventArgs e)
         {
             hideSubMenu();
-            // ca a = new ca();
-            // a.TopLevel = false;
-            // panelContent.Controls.Add(a);
-            // a.BringToFront();
-            // a.Show();
 
             // Get the current form in the panelContent panel.
             Form currentForm = panelContent.Controls.OfType<Form>().FirstOrDefault();
@@ -1638,6 +1635,157 @@ namespace FD_STOCK
                 x.StartPosition = FormStartPosition.CenterScreen;
                 x.Show();
             }
+        }
+
+        private void button17_Click_2(object sender, EventArgs e)
+        {
+            hideSubMenu();
+
+            // Get the current form in the panelContent panel.
+            Form currentForm = panelContent.Controls.OfType<Form>().FirstOrDefault();
+
+            // If the current form is the form that the user wants to open, ignore the action.
+            if (currentForm is consomationMachie)
+            {
+                return;
+            }
+
+            // Close the current form if it is not null.
+            if (currentForm != null)
+            {
+                currentForm.Close();
+            }
+
+            // Create a new instance of the form that the user wants to open.
+            consomationMachie a = new consomationMachie();
+
+            // Set the TopLevel property to false so that the form will be displayed in the panelContent panel.
+            a.TopLevel = false;
+
+            // Add the form to the panelContent panel.
+            panelContent.Controls.Add(a);
+
+            // Bring the form to the front of the panelContent panel.
+            a.BringToFront();
+            a.epe.Text = uti;
+
+            // Show the form.
+            a.Show();
+        }
+
+        private void button19_Click_1(object sender, EventArgs e)
+        {
+            hideSubMenu();
+
+            // Get the current form in the panelContent panel.
+            Form currentForm = panelContent.Controls.OfType<Form>().FirstOrDefault();
+
+            // If the current form is the form that the user wants to open, ignore the action.
+            if (currentForm is paymentFournisseur)
+            {
+                return;
+            }
+
+            // Close the current form if it is not null.
+            if (currentForm != null)
+            {
+                currentForm.Close();
+            }
+
+            // Create a new instance of the form that the user wants to open.
+            paymentFournisseur a = new paymentFournisseur();
+
+            // Set the TopLevel property to false so that the form will be displayed in the panelContent panel.
+            a.TopLevel = false;
+
+            // Add the form to the panelContent panel.
+            panelContent.Controls.Add(a);
+
+            // Bring the form to the front of the panelContent panel.
+            a.BringToFront();
+
+            // Show the form.
+            a.Show();
+        }
+
+        private void button15_Click_2(object sender, EventArgs e)
+        {
+            hideSubMenu();
+
+            // Get the current form in the panelContent panel.
+            Form currentForm = panelContent.Controls.OfType<Form>().FirstOrDefault();
+
+            // If the current form is the form that the user wants to open, ignore the action.
+            if (currentForm is regl)
+            {
+                return;
+            }
+
+            // Close the current form if it is not null.
+            if (currentForm != null)
+            {
+                currentForm.Close();
+            }
+
+            // Create a new instance of the form that the user wants to open.
+            regl a = new regl();
+
+            // Set the TopLevel property to false so that the form will be displayed in the panelContent panel.
+            a.TopLevel = false;
+
+            // Add the form to the panelContent panel.
+            panelContent.Controls.Add(a);
+
+            // Bring the form to the front of the panelContent panel.
+            a.BringToFront();
+
+            // Show the form.
+            a.Show();
+        }
+
+        private void button14_Click_2(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            // nf a = new nf();
+            // a.TopLevel = false;
+            // panelContent.Controls.Add(a);
+            // a.BringToFront();
+            // a.Show();
+
+            // Get the current form in the panelContent panel.
+            Form currentForm = panelContent.Controls.OfType<Form>().FirstOrDefault();
+
+            // If the current form is the form that the user wants to open, ignore the action.
+            if (currentForm is ldf)
+            {
+                return;
+            }
+
+            // Close the current form if it is not null.
+            if (currentForm != null)
+            {
+                currentForm.Close();
+            }
+
+            // Create a new instance of the form that the user wants to open.
+            ldf a = new ldf();
+
+            // Set the TopLevel property to false so that the form will be displayed in the panelContent panel.
+            a.TopLevel = false;
+
+            // Add the form to the panelContent panel.
+            panelContent.Controls.Add(a);
+
+            // Bring the form to the front of the panelContent panel.
+            a.BringToFront();
+
+            // Show the form.
+            a.Show();
+        }
+
+        private void reglementpanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
