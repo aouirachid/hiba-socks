@@ -1,13 +1,13 @@
 # .gitignore
 # Ignore entire bin folder, then keep only documents
-hiba-socks/bin
-!hiba-socks/bin/**/*.xlsx
-!hiba-socks/bin/**/*.docx
-!hiba-socks/bin/**/*.doc
-!hiba-socks/bin/**/*.dll
+/bin
+!/bin/**/*.xlsx
+!/bin/**/*.docx
+!/bin/**/*.doc
+!/bin/**/*.dll
 
 # Ignore obj folder completely
-hiba-socks/obj/
+/obj/
 
 # Visual Studio files
 *.suo
