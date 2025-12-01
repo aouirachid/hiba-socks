@@ -217,7 +217,8 @@ namespace FD_STOCK
             this.Column4});
             this.tableau.Location = new System.Drawing.Point(18, 353);
             this.tableau.Name = "tableau";
-            this.tableau.Size = new System.Drawing.Size(1101, 357);
+            this.tableau.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tableau.Size = new System.Drawing.Size(1102, 357);
             this.tableau.TabIndex = 172;
             // 
             // ta
