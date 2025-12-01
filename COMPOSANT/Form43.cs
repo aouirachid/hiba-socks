@@ -50,8 +50,7 @@ namespace FD_STOCK
                         rd[3],
                         rd[4],
                         rd[5],
-                        rd[6],
-                        rd[7]
+                        rd[6]
                         );
                 }
                 rd.Close();
@@ -77,8 +76,7 @@ namespace FD_STOCK
                         rd[3],
                         rd[4],
                         rd[5],
-                        rd[6],
-                        rd[7]
+                        rd[6]
                     );
             }
             bd.Close();
@@ -100,8 +98,7 @@ namespace FD_STOCK
                         rd[3],
                         rd[4],
                         rd[5],
-                        rd[6],
-                        rd[7]
+                        rd[6]
                     );
             }
             bd.Close();

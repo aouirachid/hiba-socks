@@ -33,14 +33,6 @@ namespace FD_STOCK
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tableau = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rec1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.r = new System.Windows.Forms.Label();
@@ -51,6 +43,13 @@ namespace FD_STOCK
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tableau)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,60 +112,11 @@ namespace FD_STOCK
             this.Column10,
             this.Column2,
             this.Column3,
-            this.Column4,
-            this.Column8});
+            this.Column4});
             this.tableau.Location = new System.Drawing.Point(16, 123);
             this.tableau.Name = "tableau";
             this.tableau.Size = new System.Drawing.Size(1101, 554);
             this.tableau.TabIndex = 188;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "N° de composant";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 123;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Type de composant";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Couleur";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "N° de référence";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 123;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nom de composant";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Stock";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 123;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Prix d\'achat HT";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 123;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Taux de la tva (%)";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 123;
             // 
             // rec1
             // 
@@ -280,6 +230,48 @@ namespace FD_STOCK
             this.panel5.Size = new System.Drawing.Size(2, 718);
             this.panel5.TabIndex = 252;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "N° de composant";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 123;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Type de composant";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 211;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Couleur";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "N° de référence";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 123;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nom de composant";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 212;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Stock";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 123;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Prix d\'achat HT";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 123;
+            // 
             // lpg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,6 +325,5 @@ namespace FD_STOCK
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
