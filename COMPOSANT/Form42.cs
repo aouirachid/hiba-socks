@@ -26,6 +26,7 @@ namespace FD_STOCK
 
         private void npg_Load(object sender, EventArgs e)
         {
+            modifier.Enabled = false;
             Remplir();
         }
 
@@ -51,8 +52,7 @@ namespace FD_STOCK
                         rd[3],
                         rd[4],
                         rd[5],
-                        rd[6],
-                        rd[7]
+                        rd[6]
 
 
 
@@ -68,13 +68,13 @@ namespace FD_STOCK
 
         private void enregistrer_Click(object sender, EventArgs e)
         {
-             try
-           { 
+            try
+            {
                 if (bd.State == ConnectionState.Open)
                 {
                     bd.Close();
                 }
-            using (SqlCommand cmdCheckExistence = new SqlCommand("SELECT * FROM composant WHERE UPPER([reference]) = @nr", bd))
+                using (SqlCommand cmdCheckExistence = new SqlCommand("SELECT * FROM composant WHERE UPPER([reference]) = @nr", bd))
                 {
                     bd.Open();
 
@@ -86,19 +86,17 @@ namespace FD_STOCK
                         {
                             MessageBox.Show("COMPOSANT DEJA EXISTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        else if (!string.IsNullOrEmpty(nr.Text) && !string.IsNullOrEmpty(ttva.Text))
+                        else if (!string.IsNullOrEmpty(nr.Text))
                         {
                             rdExistence.Close();
 
-                            using (SqlCommand cmdInsert = new SqlCommand("INSERT INTO composant VALUES (@ta, @color, @nr, @nda, @st, @pah, @ttva)", bd))
+                            using (SqlCommand cmdInsert = new SqlCommand("INSERT INTO composant ([type article], color, reference, [nom article], [prix achath]) VALUES (@ta, @color, @nr, @nda, @pah)", bd))
                             {
                                 cmdInsert.Parameters.AddWithValue("@ta", ta.Text);
                                 cmdInsert.Parameters.AddWithValue("@color", color.Text);
                                 cmdInsert.Parameters.AddWithValue("@nr", nr.Text);
                                 cmdInsert.Parameters.AddWithValue("@nda", nda.Text);
-                                cmdInsert.Parameters.AddWithValue("@st", st.Text);
                                 cmdInsert.Parameters.AddWithValue("@pah", pah.Text);
-                                cmdInsert.Parameters.AddWithValue("@ttva", ttva.Text);
 
                                 cmdInsert.ExecuteNonQuery();
                             }
@@ -113,14 +111,12 @@ namespace FD_STOCK
                         }
                     }
                 }
-            
-            
 
-             }
+            }
             catch
-             {
-               MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }
+            {
+                MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void nouveau_Click(object sender, EventArgs e)
@@ -128,13 +124,10 @@ namespace FD_STOCK
             ta.Text = "";
             nr.Clear();
             nda.Clear();
-            st.Text = "0.00";
             pah.Text = "0.00";
-            ttva.Text = "";
             color.Text = "";
             color.Visible = false;
             modifier.Enabled = false;
-           //supprimer.Enabled = false;
             enregistrer.Enabled = true;
             ta.Select();
         }
@@ -150,15 +143,13 @@ namespace FD_STOCK
                 if (nr.Text != "")
             {
                 bd.Open();
-                    using (SqlCommand cmd = new SqlCommand("UPDATE composant SET [type article]=@ta, [color]=@color, [reference]=@nr, [nom article]=@nda, [stock]=@st, [prix achath]=@pah, [tva]=@ttva WHERE [n° article]=@npr", bd))
+                    using (SqlCommand cmd = new SqlCommand("UPDATE composant SET [type article]=@ta, [color]=@color, [reference]=@nr, [nom article]=@nda, [prix achath]=@pah WHERE [n° article]=@npr", bd))
                     {
                         cmd.Parameters.AddWithValue("@ta", ta.Text);
                         cmd.Parameters.AddWithValue("@color", color.Text);
                         cmd.Parameters.AddWithValue("@nr", nr.Text);
                         cmd.Parameters.AddWithValue("@nda", nda.Text);
-                        cmd.Parameters.AddWithValue("@st", st.Text);
                         cmd.Parameters.AddWithValue("@pah", pah.Text);
-                        cmd.Parameters.AddWithValue("@ttva", ttva.Text);
                         cmd.Parameters.AddWithValue("@npr", npr.ToString());
 
                         cmd.ExecuteNonQuery();
@@ -210,11 +201,8 @@ namespace FD_STOCK
                 color.Text = rd[2].ToString().Trim();
                 nr.Text = rd[3].ToString().Trim();
                 nda.Text = rd[4].ToString().Trim();
-                st.Text = rd[5].ToString().Trim();
                 pah.Text = rd[6].ToString().Trim();
-                ttva.Text = rd[7].ToString().Trim();
                 modifier.Enabled = true;
-                //supprimer.Enabled = true;
                 enregistrer.Enabled = false;
 
 
@@ -256,8 +244,7 @@ namespace FD_STOCK
                         rd[3],
                         rd[4],
                         rd[5],
-                        rd[6],
-                        rd[7]
+                        rd[6]
                     );
             }
             bd.Close();
