@@ -170,6 +170,7 @@ namespace FD_STOCK
 
             // Show the form.
             a.Show();
+            
         }
 
         private void btnDetailPersonnel_Click(object sender, EventArgs e)

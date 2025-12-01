@@ -11,6 +11,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using Microsoft.VisualBasic;
 using System.IO;
+using ClosedXML.Excel;
 
 namespace FD_STOCK
 {
@@ -109,45 +110,77 @@ namespace FD_STOCK
             this.Close();
         }
 
+        private DataTable ExportDataGridViewToDataTable(DataGridView dgv)
+        {
+            var dt = new DataTable();
+
+            // Add columns
+            foreach (DataGridViewColumn column in dgv.Columns)
+            {
+                dt.Columns.Add(column.HeaderText, column.ValueType ?? typeof(string));
+            }
+
+            // Add rows
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    var dataRow = dt.NewRow();
+                    foreach (DataGridViewColumn column in dgv.Columns)
+                    {
+                        dataRow[column.HeaderText] = row.Cells[column.Index].Value ?? DBNull.Value;
+                    }
+                    dt.Rows.Add(dataRow);
+                }
+            }
+
+            return dt;
+        }
+
         private void exportBtn_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "CSV Files|*.csv";
-
-            // Set the default file name
-            saveFileDialog.FileName = "EXPORTAION LISTE COMPOSANT " + DateTime.Now.ToString("yyyy_MM_dd") + ".csv";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            string fileName = "";
+            string dateSuffix = DateTime.Now.ToString("yyyyMMdd_HHmm");
+            string ComposantType = rec1.Text.Trim();
+            if (string.IsNullOrEmpty(ComposantType))
             {
-                using (StreamWriter sw = new StreamWriter(saveFileDialog.FileName))
-                {
-                    // Write header row
-                    for (int i = 0; i < tableau.Columns.Count; i++)
-                    {
-                        sw.Write(tableau.Columns[i].HeaderText);
-                        if (i < tableau.Columns.Count - 1)
-                        {
-                            sw.Write(";");
-                        }
-                    }
-                    sw.WriteLine();
+                fileName = $" LISTE_COMPOSANT_{dateSuffix}.xlsx";
+            }
+            else
+            {
+                fileName = $" LISTE_COMPOSANT_{ComposantType}_{dateSuffix}.xlsx";
+            }          
 
-                    // Write data rows
-                    foreach (DataGridViewRow row in tableau.Rows)
-                    {
-                        for (int i = 0; i < tableau.Columns.Count; i++)
-                        {
-                            sw.Write(row.Cells[i].Value);
-                            if (i < tableau.Columns.Count - 1)
-                            {
-                                sw.Write(";");
-                            }
-                        }
-                        sw.WriteLine();
-                    }
-                }
+            const string root = "DMRproduction";
+            string myDocsRoot = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                root);
+            string appRoot = Path.Combine(Environment.CurrentDirectory, root);
+
+            string excelFolder = Path.Combine(myDocsRoot, "LISTE COMPOSANT");
+            string excelFolderBak = Path.Combine(appRoot, "LISTE COMPOSANT");
+
+            foreach (var dir in new[] { excelFolder, excelFolderBak })
+                if (!Directory.Exists(dir))
+                    Directory.CreateDirectory(dir);
+
+
+            string filePath = Path.Combine(excelFolder, fileName);
+            string filePathBak = Path.Combine(excelFolderBak, fileName);
+
+
+
+            using (var workbook = new XLWorkbook())
+            {
+
+                var ListComposant = ExportDataGridViewToDataTable(tableau);
+                workbook.Worksheets.Add(ListComposant, "LISTE COMPOSANT");
+
+                workbook.SaveAs(filePath);
+                workbook.SaveAs(filePathBak);
                 MessageBox.Show("EXPORTER AVEC SUCCE.", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
         }
 
         private void f_Click(object sender, EventArgs e)
