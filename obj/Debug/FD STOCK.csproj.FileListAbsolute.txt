@@ -405,3 +405,7 @@ C:\Users\HP\Desktop\hiba-socks\bin\Debug\System.Buffers.xml
 C:\Users\HP\Desktop\hiba-socks\bin\Debug\System.Memory.xml
 C:\Users\HP\Desktop\hiba-socks\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\HP\Desktop\hiba-socks\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\HP\Desktop\hiba-socks\bin\Debug\zxing.dll
+C:\Users\HP\Desktop\hiba-socks\bin\Debug\zxing.presentation.dll
+C:\Users\HP\Desktop\hiba-socks\bin\Debug\zxing.xml
+C:\Users\HP\Desktop\hiba-socks\bin\Debug\zxing.presentation.xml

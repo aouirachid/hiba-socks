@@ -38,7 +38,7 @@ namespace FD_STOCK
             this.r = new System.Windows.Forms.Label();
             this.rec = new System.Windows.Forms.TextBox();
             this.exportBtn = new System.Windows.Forms.Button();
-            this.f = new System.Windows.Forms.Button();
+            this.exportBarCode = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -46,7 +46,7 @@ namespace FD_STOCK
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reference = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,7 +109,7 @@ namespace FD_STOCK
             this.Column1,
             this.Column5,
             this.Column6,
-            this.Column10,
+            this.reference,
             this.Column2,
             this.Column3,
             this.Column4});
@@ -178,21 +178,20 @@ namespace FD_STOCK
             this.exportBtn.UseVisualStyleBackColor = false;
             this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
             // 
-            // f
+            // exportBarCode
             // 
-            this.f.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
-            this.f.FlatAppearance.BorderSize = 0;
-            this.f.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.f.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.f.ForeColor = System.Drawing.Color.White;
-            this.f.Location = new System.Drawing.Point(739, 686);
-            this.f.Name = "f";
-            this.f.Size = new System.Drawing.Size(186, 28);
-            this.f.TabIndex = 222;
-            this.f.Text = "Fermer";
-            this.f.UseVisualStyleBackColor = false;
-            this.f.Visible = false;
-            this.f.Click += new System.EventHandler(this.f_Click);
+            this.exportBarCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
+            this.exportBarCode.FlatAppearance.BorderSize = 0;
+            this.exportBarCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exportBarCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBarCode.ForeColor = System.Drawing.Color.White;
+            this.exportBarCode.Location = new System.Drawing.Point(739, 686);
+            this.exportBarCode.Name = "exportBarCode";
+            this.exportBarCode.Size = new System.Drawing.Size(186, 28);
+            this.exportBarCode.TabIndex = 222;
+            this.exportBarCode.Text = "Exporter Codebar";
+            this.exportBarCode.UseVisualStyleBackColor = false;
+            this.exportBarCode.Click += new System.EventHandler(this.exportBarCode_Click);
             // 
             // panel1
             // 
@@ -248,11 +247,11 @@ namespace FD_STOCK
             this.Column6.Name = "Column6";
             this.Column6.Width = 125;
             // 
-            // Column10
+            // reference
             // 
-            this.Column10.HeaderText = "N° de référence";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 123;
+            this.reference.HeaderText = "N° de référence";
+            this.reference.Name = "reference";
+            this.reference.Width = 123;
             // 
             // Column2
             // 
@@ -282,7 +281,7 @@ namespace FD_STOCK
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.exportBtn);
-            this.Controls.Add(this.f);
+            this.Controls.Add(this.exportBarCode);
             this.Controls.Add(this.rec1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.r);
@@ -313,7 +312,7 @@ namespace FD_STOCK
         private System.Windows.Forms.Label r;
         private System.Windows.Forms.TextBox rec;
         private System.Windows.Forms.Button exportBtn;
-        private System.Windows.Forms.Button f;
+        private System.Windows.Forms.Button exportBarCode;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -321,7 +320,7 @@ namespace FD_STOCK
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reference;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
