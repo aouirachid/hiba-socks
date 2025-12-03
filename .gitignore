@@ -1,6 +1,6 @@
 # .gitignore
 # Ignore entire bin folder, then keep only documents
-/bin
+/bin/*
 !/bin/**/*.xlsx
 !/bin/**/*.docx
 !/bin/**/*.doc
