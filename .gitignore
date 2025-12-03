@@ -1,11 +1,18 @@
-# .gitignore
-# Ignore entire bin folder, then keep only documents
-/bin
+# Ignore contents of bin folder
+/bin/*
+/bin/debug/'BON DE LIVRAISON'
+/bin/debug/DMRproduction
+/bin/debug/factures
+
+# But allow Git to traverse subdirectories
+!/bin/*/
+
+
+# Then keep specific file types
 !/bin/**/*.xlsx
 !/bin/**/*.docx
 !/bin/**/*.doc
 !/bin/**/*.dll
-
 # Ignore obj folder completely
 /obj/
 
