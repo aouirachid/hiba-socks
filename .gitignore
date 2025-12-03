@@ -1,8 +1,12 @@
 # Ignore contents of bin folder
 /bin/*
+/bin/debug/'BON DE LIVRAISON'
+/bin/debug/DMRproduction
+/bin/debug/factures
 
 # But allow Git to traverse subdirectories
 !/bin/*/
+
 
 # Then keep specific file types
 !/bin/**/*.xlsx
