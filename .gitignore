@@ -12,7 +12,6 @@
 !/bin/**/*.xlsx
 !/bin/**/*.docx
 !/bin/**/*.doc
-!/bin/**/*.dll
 # Ignore obj folder completely
 /obj/
 
