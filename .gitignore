@@ -1,0 +1,21 @@
+# .gitignore
+# Ignore entire bin folder, then keep only documents
+/bin
+!/bin/**/*.xlsx
+!/bin/**/*.docx
+!/bin/**/*.doc
+!/bin/**/*.dll
+
+# Ignore obj folder completely
+/obj/
+
+# Visual Studio files
+*.suo
+*.user
+*.userosscache  
+*.sln.docstates
+.vs/
+
+# Packages folder
+/packages/
+*.nupkg
