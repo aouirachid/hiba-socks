@@ -54,7 +54,6 @@ namespace FD_STOCK
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tableau)).BeginInit();
             this.SuspendLayout();
@@ -213,7 +212,6 @@ namespace FD_STOCK
             this.Column6,
             this.Column10,
             this.Column2,
-            this.Column3,
             this.Column4});
             this.tableau.Location = new System.Drawing.Point(18, 353);
             this.tableau.Name = "tableau";
@@ -334,12 +332,6 @@ namespace FD_STOCK
             this.Column2.Name = "Column2";
             this.Column2.Width = 250;
             // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Stock";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 130;
-            // 
             // Column4
             // 
             this.Column4.HeaderText = "Prix d\'achat HT";
@@ -408,7 +400,6 @@ namespace FD_STOCK
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
