@@ -67,6 +67,7 @@ namespace FD_STOCK
             this.panel5 = new System.Windows.Forms.Panel();
             this.nRef = new System.Windows.Forms.TextBox();
             this.nBox = new System.Windows.Forms.TextBox();
+            this.npro = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tableau)).BeginInit();
             this.SuspendLayout();
             // 
@@ -449,10 +450,11 @@ namespace FD_STOCK
             // 
             this.nRef.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nRef.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nRef.Location = new System.Drawing.Point(45, 315);
+            this.nRef.Location = new System.Drawing.Point(58, 315);
             this.nRef.Name = "nRef";
-            this.nRef.Size = new System.Drawing.Size(183, 22);
+            this.nRef.Size = new System.Drawing.Size(170, 22);
             this.nRef.TabIndex = 250;
+            this.nRef.TextChanged += new System.EventHandler(this.nRef_TextChanged);
             // 
             // nBox
             // 
@@ -463,11 +465,22 @@ namespace FD_STOCK
             this.nBox.Size = new System.Drawing.Size(86, 22);
             this.nBox.TabIndex = 251;
             // 
+            // npro
+            // 
+            this.npro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.npro.FormattingEnabled = true;
+            this.npro.Location = new System.Drawing.Point(11, 313);
+            this.npro.Name = "npro";
+            this.npro.Size = new System.Drawing.Size(41, 23);
+            this.npro.TabIndex = 252;
+            this.npro.Visible = false;
+            // 
             // eg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 722);
+            this.Controls.Add(this.npro);
             this.Controls.Add(this.nBox);
             this.Controls.Add(this.nRef);
             this.Controls.Add(this.panel5);
@@ -549,5 +562,6 @@ namespace FD_STOCK
         private System.Windows.Forms.DataGridViewButtonColumn Supprimer;
         private System.Windows.Forms.TextBox nRef;
         private System.Windows.Forms.TextBox nBox;
+        private System.Windows.Forms.ComboBox npro;
     }
 }
