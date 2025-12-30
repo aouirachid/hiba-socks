@@ -300,6 +300,7 @@ namespace FD_STOCK
             this.epe.ReadOnly = true;
             this.epe.Size = new System.Drawing.Size(368, 22);
             this.epe.TabIndex = 181;
+            this.epe.Text = "admin";
             // 
             // pah
             // 
@@ -408,6 +409,7 @@ namespace FD_STOCK
             this.nf.Name = "nf";
             this.nf.Size = new System.Drawing.Size(49, 22);
             this.nf.TabIndex = 214;
+            this.nf.Text = "1";
             this.nf.Visible = false;
             // 
             // panel1
@@ -473,7 +475,6 @@ namespace FD_STOCK
             this.npro.Name = "npro";
             this.npro.Size = new System.Drawing.Size(41, 23);
             this.npro.TabIndex = 252;
-            this.npro.Visible = false;
             // 
             // eg
             // 

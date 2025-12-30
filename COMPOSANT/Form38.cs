@@ -26,16 +26,16 @@ namespace FD_STOCK
 
         private void Enregistrer_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (bd.State == ConnectionState.Open)
+            //try
+            //{
+            //    if (bd.State == ConnectionState.Open)
                 {
                     bd.Close();
                 }
                 if (teg.Text != "" && tableau.Rows.Count > 1)
                 {
                     bd.Open();
-                    SqlCommand cmd = new SqlCommand("insert into entreeg values('" + teg.Text + "','" + tdee.Text + "','" + npe.Text + "','" + ddee.Value.ToString() + "','" + epe.Text + "')", bd);
+                    SqlCommand cmd = new SqlCommand("insert into entreeg ([type dentree],[type piece],[n° piece],[date entree],[entree par]) values('" + teg.Text + "','" + tdee.Text + "','" + npe.Text + "','" + ddee.Value.ToString() + "','" + epe.Text + "')", bd);
                     cmd.ExecuteNonQuery();
 
                     SqlCommand cmd1 = new SqlCommand("select top(1) [n°entree] from [entreeg] order by [n°entree] desc", bd);
@@ -45,13 +45,13 @@ namespace FD_STOCK
                     rd.Close();
                     for (int i = 0; i < tableau.Rows.Count - 1; i++)
                     {
-                        SqlCommand cmd2 = new SqlCommand("insert into dentreeg values(@nEntree,@nComposant,@nFournisseur,@quantity,@prixAchatHt,@boxNumber)", bd);
+                        SqlCommand cmd2 = new SqlCommand("insert into dentreeg ([n° entre],[n° article],[nFourn],[quantite],[prix achatht],[boxNumber]) values(@nEntree,@nComposant,@nFournisseur,@quantity,@prixAchatHt,@boxNumber)", bd);
                         cmd2.Parameters.AddWithValue("@nEntree", ndee.ToString());
                         cmd2.Parameters.AddWithValue("@nComposant", tableau.Rows[i].Cells[0].Value.ToString());
                         cmd2.Parameters.AddWithValue("@nFournisseur",nf.Text);
-                        cmd2.Parameters.AddWithValue("@quantity", tableau.Rows[i].Cells[2].Value.ToString());
-                        cmd2.Parameters.AddWithValue("@prixAchatHt", tableau.Rows[i].Cells[3].Value.ToString());
-                        cmd2.Parameters.AddWithValue("@boxNumber", tableau.Rows[i].Cells[4].Value.ToString());
+                        cmd2.Parameters.AddWithValue("@quantity",double.Parse(tableau.Rows[i].Cells[2].Value.ToString()));
+                        cmd2.Parameters.AddWithValue("@prixAchatHt", Convert.ToDouble(tableau.Rows[i].Cells[4].Value.ToString()));
+                        cmd2.Parameters.AddWithValue("@boxNumber", tableau.Rows[i].Cells[3].Value.ToString());
                         cmd2.ExecuteNonQuery();
                         SqlCommand cd = new SqlCommand("select*from composant where [n° article]='" + tableau.Rows[i].Cells[0].Value.ToString() + "'", bd);
                         SqlDataReader rb = cd.ExecuteReader();
@@ -72,11 +72,11 @@ namespace FD_STOCK
                 {
                     MessageBox.Show("SAISIE INCOMPLETE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                }
-            catch
-            {
-               MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                //}
+            //catch
+            //{
+            //   MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
             
         }
 
