@@ -151,10 +151,7 @@ namespace FD_STOCK
             qu.Select();
         }
 
-        private void eg_Load(object sender, EventArgs e)
-        {
-            
-        }
+       
 
        
 
@@ -264,10 +261,7 @@ namespace FD_STOCK
             x.ShowDialog();
         }
 
-        private void qu_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         
 
