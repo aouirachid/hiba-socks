@@ -26,9 +26,9 @@ namespace FD_STOCK
 
         private void Enregistrer_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (bd.State == ConnectionState.Open)
+            try
+            {
+                if (bd.State == ConnectionState.Open)
                 {
                     bd.Close();
                 }
@@ -48,8 +48,8 @@ namespace FD_STOCK
                         SqlCommand cmd2 = new SqlCommand("insert into dentreeg ([n° entre],[n° article],[nFourn],[quantite],[prix achatht],[boxNumber]) values(@nEntree,@nComposant,@nFournisseur,@quantity,@prixAchatHt,@boxNumber)", bd);
                         cmd2.Parameters.AddWithValue("@nEntree", ndee.ToString());
                         cmd2.Parameters.AddWithValue("@nComposant", tableau.Rows[i].Cells[0].Value.ToString());
-                        cmd2.Parameters.AddWithValue("@nFournisseur",nf.Text);
-                        cmd2.Parameters.AddWithValue("@quantity",double.Parse(tableau.Rows[i].Cells[2].Value.ToString()));
+                        cmd2.Parameters.AddWithValue("@nFournisseur", nf.Text);
+                        cmd2.Parameters.AddWithValue("@quantity", double.Parse(tableau.Rows[i].Cells[2].Value.ToString()));
                         cmd2.Parameters.AddWithValue("@prixAchatHt", Convert.ToDouble(tableau.Rows[i].Cells[4].Value.ToString()));
                         cmd2.Parameters.AddWithValue("@boxNumber", tableau.Rows[i].Cells[3].Value.ToString());
                         cmd2.ExecuteNonQuery();
@@ -72,12 +72,12 @@ namespace FD_STOCK
                 {
                     MessageBox.Show("SAISIE INCOMPLETE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                //}
-            //catch
-            //{
-            //   MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            
+            }
+            catch
+            {
+                MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void Ajouter_Click(object sender, EventArgs e)
