@@ -34,7 +34,6 @@ namespace FD_STOCK.COMPOSANT
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNa = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.tsg = new System.Windows.Forms.ComboBox();
             this.sp = new System.Windows.Forms.TextBox();
             this.qu = new System.Windows.Forms.TextBox();
             this.nc = new System.Windows.Forms.TextBox();
@@ -54,6 +53,11 @@ namespace FD_STOCK.COMPOSANT
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nBox = new System.Windows.Forms.TextBox();
+            this.nComposant = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tsg = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tableau)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,14 +95,13 @@ namespace FD_STOCK.COMPOSANT
             this.btnNa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNa.ForeColor = System.Drawing.Color.White;
-            this.btnNa.Location = new System.Drawing.Point(584, 102);
+            this.btnNa.Location = new System.Drawing.Point(875, 68);
             this.btnNa.Name = "btnNa";
             this.btnNa.Size = new System.Drawing.Size(148, 22);
             this.btnNa.TabIndex = 289;
             this.btnNa.Text = "Rechercher";
             this.btnNa.UseVisualStyleBackColor = false;
             this.btnNa.Visible = false;
-            this.btnNa.Click += new System.EventHandler(this.btnNa_Click);
             // 
             // label7
             // 
@@ -109,20 +112,6 @@ namespace FD_STOCK.COMPOSANT
             this.label7.Size = new System.Drawing.Size(104, 16);
             this.label7.TabIndex = 285;
             this.label7.Text = "Type d\'article";
-            // 
-            // tsg
-            // 
-            this.tsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsg.FormattingEnabled = true;
-            this.tsg.Items.AddRange(new object[] {
-            "Matiére 1 ére",
-            "Emballage",
-            "Piéce de rechange"});
-            this.tsg.Location = new System.Drawing.Point(120, 66);
-            this.tsg.Name = "tsg";
-            this.tsg.Size = new System.Drawing.Size(368, 24);
-            this.tsg.TabIndex = 286;
-            this.tsg.SelectedIndexChanged += new System.EventHandler(this.tsg_SelectedIndexChanged);
             // 
             // sp
             // 
@@ -160,12 +149,11 @@ namespace FD_STOCK.COMPOSANT
             // 
             this.npro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.npro.FormattingEnabled = true;
-            this.npro.Location = new System.Drawing.Point(738, 101);
+            this.npro.Location = new System.Drawing.Point(1046, 65);
             this.npro.Name = "npro";
-            this.npro.Size = new System.Drawing.Size(105, 23);
+            this.npro.Size = new System.Drawing.Size(73, 23);
             this.npro.TabIndex = 262;
             this.npro.Visible = false;
-            this.npro.SelectedIndexChanged += new System.EventHandler(this.npro_SelectedIndexChanged);
             // 
             // dds
             // 
@@ -188,7 +176,6 @@ namespace FD_STOCK.COMPOSANT
             this.Enregistrer.TabIndex = 258;
             this.Enregistrer.Text = "Enregistrer";
             this.Enregistrer.UseVisualStyleBackColor = false;
-            this.Enregistrer.Click += new System.EventHandler(this.Enregistrer_Click);
             // 
             // Ajouter
             // 
@@ -204,7 +191,6 @@ namespace FD_STOCK.COMPOSANT
             this.Ajouter.Text = "Ajouter";
             this.Ajouter.UseVisualStyleBackColor = false;
             this.Ajouter.Visible = false;
-            this.Ajouter.Click += new System.EventHandler(this.Ajouter_Click);
             // 
             // panel3
             // 
@@ -231,6 +217,7 @@ namespace FD_STOCK.COMPOSANT
             this.button36.Text = "-";
             this.button36.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button36.UseVisualStyleBackColor = false;
+            this.button36.Visible = false;
             // 
             // button1
             // 
@@ -296,7 +283,6 @@ namespace FD_STOCK.COMPOSANT
             this.tableau.Size = new System.Drawing.Size(1101, 436);
             this.tableau.TabIndex = 256;
             this.tableau.Visible = false;
-            this.tableau.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableau_CellContentClick);
             // 
             // Column1
             // 
@@ -328,24 +314,79 @@ namespace FD_STOCK.COMPOSANT
             // 
             this.nBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nBox.Location = new System.Drawing.Point(12, 236);
+            this.nBox.Location = new System.Drawing.Point(12, 235);
             this.nBox.Name = "nBox";
             this.nBox.Size = new System.Drawing.Size(258, 22);
             this.nBox.TabIndex = 294;
             this.nBox.TextChanged += new System.EventHandler(this.nBox_TextChanged);
+            // 
+            // nComposant
+            // 
+            this.nComposant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nComposant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nComposant.Location = new System.Drawing.Point(500, 67);
+            this.nComposant.Name = "nComposant";
+            this.nComposant.ReadOnly = true;
+            this.nComposant.Size = new System.Drawing.Size(85, 22);
+            this.nComposant.TabIndex = 295;
+            this.nComposant.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 216);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.TabIndex = 296;
+            this.label1.Text = "N Box";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(277, 214);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(138, 16);
+            this.label2.TabIndex = 297;
+            this.label2.Text = "Non de composant";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(620, 212);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 16);
+            this.label3.TabIndex = 298;
+            this.label3.Text = "Quantite";
+            // 
+            // tsg
+            // 
+            this.tsg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsg.Location = new System.Drawing.Point(120, 67);
+            this.tsg.Name = "tsg";
+            this.tsg.ReadOnly = true;
+            this.tsg.Size = new System.Drawing.Size(367, 22);
+            this.tsg.TabIndex = 299;
             // 
             // sortieComposant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 722);
+            this.Controls.Add(this.tsg);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.nComposant);
             this.Controls.Add(this.nBox);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNa);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.tsg);
             this.Controls.Add(this.sp);
             this.Controls.Add(this.qu);
             this.Controls.Add(this.nc);
@@ -376,7 +417,6 @@ namespace FD_STOCK.COMPOSANT
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnNa;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox tsg;
         public System.Windows.Forms.TextBox sp;
         private System.Windows.Forms.TextBox qu;
         private System.Windows.Forms.TextBox nc;
@@ -396,5 +436,10 @@ namespace FD_STOCK.COMPOSANT
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewButtonColumn Supprimer;
         private System.Windows.Forms.TextBox nBox;
+        private System.Windows.Forms.TextBox nComposant;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tsg;
     }
 }
