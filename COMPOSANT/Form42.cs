@@ -51,7 +51,6 @@ namespace FD_STOCK
                         rd[2],
                         rd[3],
                         rd[4],
-                        rd[5],
                         rd[6]
 
 
@@ -243,7 +242,6 @@ namespace FD_STOCK
                         rd[2],
                         rd[3],
                         rd[4],
-                        rd[5],
                         rd[6]
                     );
             }
