@@ -16,7 +16,7 @@ namespace FD_STOCK
     public partial class eg : Form
     {
         int npr;
-
+        private Debouncer searchDebouncer = new Debouncer(500);
         static string cons = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
         SqlConnection bd = new SqlConnection(cons);
         public eg()
@@ -35,7 +35,7 @@ namespace FD_STOCK
                 if (teg.Text != "" && tableau.Rows.Count > 1)
                 {
                     bd.Open();
-                    SqlCommand cmd = new SqlCommand("insert into entreeg values('" + teg.Text + "','" + tdee.Text + "','" + npe.Text + "','" + ddee.Value.ToString() + "','" + epe.Text + "')", bd);
+                    SqlCommand cmd = new SqlCommand("insert into entreeg ([type dentree],[type piece],[n° piece],[date entree],[entree par]) values('" + teg.Text + "','" + tdee.Text + "','" + npe.Text + "','" + ddee.Value.ToString() + "','" + epe.Text + "')", bd);
                     cmd.ExecuteNonQuery();
 
                     SqlCommand cmd1 = new SqlCommand("select top(1) [n°entree] from [entreeg] order by [n°entree] desc", bd);
@@ -45,7 +45,13 @@ namespace FD_STOCK
                     rd.Close();
                     for (int i = 0; i < tableau.Rows.Count - 1; i++)
                     {
-                        SqlCommand cmd2 = new SqlCommand("insert into dentreeg values(" + ndee.ToString() + ",'" + tableau.Rows[i].Cells[0].Value.ToString() + "','" + nf.Text + "','" + tableau.Rows[i].Cells[2].Value.ToString() + "','" + tableau.Rows[i].Cells[3].Value.ToString() + "')", bd);
+                        SqlCommand cmd2 = new SqlCommand("insert into dentreeg ([n° entre],[n° article],[nFourn],[quantite],[prix achatht],[boxNumber]) values(@nEntree,@nComposant,@nFournisseur,@quantity,@prixAchatHt,@boxNumber)", bd);
+                        cmd2.Parameters.AddWithValue("@nEntree", ndee.ToString());
+                        cmd2.Parameters.AddWithValue("@nComposant", tableau.Rows[i].Cells[0].Value.ToString());
+                        cmd2.Parameters.AddWithValue("@nFournisseur", nf.Text);
+                        cmd2.Parameters.AddWithValue("@quantity", double.Parse(tableau.Rows[i].Cells[2].Value.ToString()));
+                        cmd2.Parameters.AddWithValue("@prixAchatHt", Convert.ToDouble(tableau.Rows[i].Cells[4].Value.ToString()));
+                        cmd2.Parameters.AddWithValue("@boxNumber", tableau.Rows[i].Cells[3].Value.ToString());
                         cmd2.ExecuteNonQuery();
                         SqlCommand cd = new SqlCommand("select*from composant where [n° article]='" + tableau.Rows[i].Cells[0].Value.ToString() + "'", bd);
                         SqlDataReader rb = cd.ExecuteReader();
@@ -66,41 +72,42 @@ namespace FD_STOCK
                 {
                     MessageBox.Show("SAISIE INCOMPLETE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                }
+            }
             catch
             {
-               MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void Ajouter_Click(object sender, EventArgs e)
         {
-            try { 
-           // if (npro.Text != "" && int.Parse(qu.Text) > 0)
-            if (npro.Text != "" && float.TryParse(qu.Text, out float quantite) && quantite > 0)
-                    {
-                for (int i = 0; i < tableau.Rows.Count - 1; i++)
+            try {
+
+                if (npro.Text != "" && float.TryParse(qu.Text, out float quantite) && quantite > 0)
                 {
-                    if (tableau.Rows[i].Cells[0].Value.ToString() == npro.Text)
+                    for (int i = 0; i < tableau.Rows.Count - 1; i++)
                     {
-                        MessageBox.Show(" COMPOSANT DEJA AJOUTER", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                        if (tableau.Rows[i].Cells[0].Value.ToString() == npro.Text)
+                        {
+                            MessageBox.Show(" COMPOSANT DEJA AJOUTER", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                     }
+                    tableau.Rows.Add(
+                    npro.Text,
+                    nc.Text,
+                    qu.Text,
+                    nBox.Text,
+                    pah.Text,
+                    ttva.Text
+                    );
+                    npro.Text = ""; nc.Clear(); qu.Text = "0.00"; pah.Clear(); ttva.Clear(); nBox.Clear(); nRef.Clear(); nRef.Select();
                 }
-                tableau.Rows.Add(
-                npro.Text,
-                nc.Text,
-                qu.Text,
-                pah.Text,
-                ttva.Text
-                );
-                npro.Text = ""; nc.Clear(); qu.Text = "0.00"; pah.Clear(); ttva.Clear();
-            }
-            else
-            {
-                MessageBox.Show("SAISIE INCOMPLETE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                else
+                {
+                    MessageBox.Show("SAISIE INCOMPLETE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch
             {
@@ -110,96 +117,28 @@ namespace FD_STOCK
 
         private void npro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (bd.State == ConnectionState.Open)
-            {
-                bd.Close();
-            }
-            bd.Open();
-            if (teg.SelectedIndex == 0)
-            {
-                SqlCommand cmd = new SqlCommand("select*from composant where [n° article]='" + npro.Text + "'", bd);
-                SqlDataReader rd = cmd.ExecuteReader();
-                rd.Read();
-                nc.Text = rd.GetValue(4).ToString();
-                pah.Text = rd.GetValue(6).ToString();
-                ttva.Text = rd.GetValue(7).ToString();
-                rd.Close();
-            }
-            
-            else if (teg.SelectedIndex == 1)
-            {
-                SqlCommand cmd = new SqlCommand("select*from composant where [n° article]='" + npro.Text + "'", bd);
-                SqlDataReader rd = cmd.ExecuteReader();
-                rd.Read();
-                nc.Text = rd.GetValue(4).ToString();
-                pah.Text = rd.GetValue(6).ToString();
-                ttva.Text = rd.GetValue(7).ToString();
-                rd.Close();
-                
-            }
-            else
-            {
-                SqlCommand cmd = new SqlCommand("select*from composant where [n° article]='" + npro.Text + "'", bd);
-                SqlDataReader rd = cmd.ExecuteReader();
-                rd.Read();
-                nc.Text = rd.GetValue(4).ToString();
-                pah.Text = rd.GetValue(6).ToString();
-                ttva.Text = rd.GetValue(7).ToString();
-                rd.Close();
-            }
-            bd.Close();
-            qu.Select();
-        }
-
-        private void eg_Load(object sender, EventArgs e)
-        {
             
         }
 
        
 
+       
+
         private void teg_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (bd.State == ConnectionState.Open)
-            {
-                bd.Close();
-            }
-            bd.Open();
             if (teg.SelectedIndex == 0)
             {
-                SqlCommand cmd = new SqlCommand("select*from composant where [type article] = 'Matiére 1 ére'", bd);
-                SqlDataReader rd = cmd.ExecuteReader();
-                npro.Items.Clear();
-                while (rd.Read())
-                {
-                    npro.Items.Add(rd.GetValue(0));
-                }
-                rd.Close();
-
-                
+                nBox.Text = "MAT-";
             }
             else if (teg.SelectedIndex == 1)
             {
-                SqlCommand cmd = new SqlCommand("select*from composant where [type article] = 'Emballage'", bd);
-                SqlDataReader rd = cmd.ExecuteReader();
-                npro.Items.Clear();
-                while (rd.Read())
-                {
-                    npro.Items.Add(rd.GetValue(0));
-                }
-                rd.Close();
+                nBox.Text = "EM-";
             }
             else
             {
-                SqlCommand cmd1 = new SqlCommand("select*from composant where [type article] = 'Piéce de rechange'", bd);
-                SqlDataReader rd1 = cmd1.ExecuteReader();
-                npro.Items.Clear();
-                while (rd1.Read())
-                {
-                    npro.Items.Add(rd1.GetValue(0).ToString().Trim());
-                }
+                nBox.Text = "PDR-";
             }
-            bd.Close();
+
         }
 
         
@@ -264,12 +203,41 @@ namespace FD_STOCK
             x.ShowDialog();
         }
 
-        private void qu_TextChanged(object sender, EventArgs e)
+        private void nRef_TextChanged(object sender, EventArgs e)
         {
-
+            if (nRef.Text != "")
+            {
+                searchDebouncer.Debounce(() =>
+                {
+                    if (bd.State == ConnectionState.Open)
+                    {
+                        bd.Close();
+                    }
+                    bd.Open();
+                    SqlCommand cmd = new SqlCommand("select*from composant where [reference]=@nReference", bd);
+                    cmd.Parameters.AddWithValue("@nReference", nRef.Text);
+                    SqlDataReader rd = cmd.ExecuteReader();
+                    if (rd.Read()) // Check if a record was actually found
+                {
+                        npro.Text = rd[0].ToString();
+                        nc.Text = rd.GetValue(4).ToString();
+                        pah.Text = rd.GetValue(6).ToString();
+                        ttva.Text = rd.GetValue(7).ToString();
+                    }
+                    else
+                    {
+                    // Clear the fields if no match is found
+                    nc.Text = "";
+                        pah.Text = "";
+                        ttva.Text = "";
+                    }
+                    rd.Close();
+                    bd.Close();
+                    qu.Select();
+                });
+            }
+            
         }
-
-        
 
         
     }

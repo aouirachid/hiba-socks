@@ -107,6 +107,7 @@
     <Compile Include="CAISSE\eChequeCaisse.Designer.cs">
       <DependentUpon>eChequeCaisse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Debouncer.cs" />
     <Compile Include="COMPOSANT\listSortieComposant.cs">
       <SubType>Form</SubType>
     </Compile>
