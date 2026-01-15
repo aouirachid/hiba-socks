@@ -14,6 +14,7 @@ namespace FD_STOCK.COMPOSANT
 {
     public partial class sortieComposant : Form
     {
+        private Debouncer searchDebouncer = new Debouncer(500);
         static string cons = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
         SqlConnection bd = new SqlConnection(cons);
         public sortieComposant()
@@ -27,6 +28,33 @@ namespace FD_STOCK.COMPOSANT
             nc.Text = "";
             qu.Text = "0.00";
             tableau.Rows.Clear();
+        }
+        private void checkStatus()
+        {
+            if (bd.State == ConnectionState.Open)
+            {
+                bd.Close();
+            }
+        }
+
+        private void getByBoxNumber(string boxNumber)
+        {
+            checkStatus();   
+            bd.Open();
+            SqlCommand cmd = new SqlCommand("select c.[nom article],deg.[quantite] from dentreeg deg join composant c on deg.[n° article] = c.[n° article] where deg.boxNumber = @boxNumber", bd);
+            cmd.Parameters.AddWithValue("@boxNumber", boxNumber);
+            SqlDataReader rd = cmd.ExecuteReader();
+            if (rd.Read()) // Check if a record was actually found
+            {
+                nc.Text = rd[0].ToString();
+                qu.Text = rd[1].ToString();
+            }
+            else
+            {
+                // Clear the fields if no match is found
+                nc.Text = "";
+                qu.Text = "";
+            }
         }
 
         private void Enregistrer_Click(object sender, EventArgs e)
@@ -243,6 +271,17 @@ namespace FD_STOCK.COMPOSANT
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void nBox_TextChanged(object sender, EventArgs e)
+        {
+            if (nBox.Text != "")
+            {
+                searchDebouncer.Debounce(() =>
+                {
+                    getByBoxNumber(nBox.Text);
+                });
+            }
         }
     }
 }
