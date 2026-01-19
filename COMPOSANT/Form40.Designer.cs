@@ -60,7 +60,6 @@ namespace FD_STOCK
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tableau)).BeginInit();
@@ -171,7 +170,6 @@ namespace FD_STOCK
             this.Column2,
             this.nBox,
             this.Column4,
-            this.Column8,
             this.Column7,
             this.Column10});
             this.tableau.Location = new System.Drawing.Point(16, 132);
@@ -387,12 +385,6 @@ namespace FD_STOCK
             this.Column4.Name = "Column4";
             this.Column4.Width = 85;
             // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Taux de la tva (%)";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 85;
-            // 
             // Column7
             // 
             this.Column7.HeaderText = "Entrée par";
@@ -475,7 +467,6 @@ namespace FD_STOCK
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }

@@ -49,7 +49,7 @@ namespace FD_STOCK
         {
             bd.Open();
             tableau.Rows.Clear();
-            SqlCommand cmd = new SqlCommand("SELECT entreeg.[n°entree], fournisseur.denomination, entreeg.[type piece], entreeg.[n° piece], composant.[type article], composant.[nom article],composant.color, dentreeg.quantite, dentreeg.boxNumber,dentreeg.[prix achatht], composant.tva, entreeg.[entree par],  entreeg.[date entree] FROM dentreeg INNER JOIN composant ON dentreeg.[n° article] = composant.[n° article] INNER JOIN entreeg ON dentreeg.[n° entre] = entreeg.[n°entree] INNER JOIN fournisseur ON dentreeg.nFourn = fournisseur.[n° fournisseur] where composant.[type article] like @typeArticle and composant.[nom article] like @nomArticle ", bd);
+            SqlCommand cmd = new SqlCommand("SELECT entreeg.[n°entree], fournisseur.denomination, entreeg.[type piece], entreeg.[n° piece], composant.[type article], composant.[nom article],composant.color, dentreeg.quantite, dentreeg.boxNumber,dentreeg.[prix achatht], entreeg.[entree par],  entreeg.[date entree] FROM dentreeg INNER JOIN composant ON dentreeg.[n° article] = composant.[n° article] INNER JOIN entreeg ON dentreeg.[n° entre] = entreeg.[n°entree] INNER JOIN fournisseur ON dentreeg.nFourn = fournisseur.[n° fournisseur] where composant.[type article] like @typeArticle and composant.[nom article] like @nomArticle ", bd);
             cmd.Parameters.AddWithValue("@typeArticle", typeArticle + "%");
             cmd.Parameters.AddWithValue("@nomArticle", nomArticle + "%");
             SqlDataReader rd = cmd.ExecuteReader();
@@ -67,8 +67,7 @@ namespace FD_STOCK
                    rd[8],
                    rd[9],
                    rd[10],
-                   rd[11],
-                   rd.GetDateTime(12).ToString("dd/MM/yyyy")
+                   rd.GetDateTime(11).ToString("dd/MM/yyyy")
                    );
             }
             bd.Close();
@@ -79,7 +78,7 @@ namespace FD_STOCK
         {
             tableau.Rows.Clear();
             bd.Open();
-            string query = "SELECT entreeg.[n°entree], fournisseur.denomination, entreeg.[type piece], entreeg.[n° piece], composant.[type article], composant.[nom article],composant.color, dentreeg.quantite, dentreeg.[prix achatht], composant.tva, entreeg.[entree par],  entreeg.[date entree] FROM dentreeg INNER JOIN composant ON dentreeg.[n° article] = composant.[n° article] INNER JOIN entreeg ON dentreeg.[n° entre] = entreeg.[n°entree] INNER JOIN fournisseur ON dentreeg.nFourn = fournisseur.[n° fournisseur] WHERE entreeg.[date entree] >= @fromDate AND entreeg.[date entree] <= @toDate and composant.[nom article] like @nomArticle and composant.[type article] like @typeArticle";
+            string query = "SELECT entreeg.[n°entree], fournisseur.denomination, entreeg.[type piece], entreeg.[n° piece], composant.[type article], composant.[nom article],composant.color, dentreeg.quantite, dentreeg.[prix achatht], entreeg.[entree par],  entreeg.[date entree] FROM dentreeg INNER JOIN composant ON dentreeg.[n° article] = composant.[n° article] INNER JOIN entreeg ON dentreeg.[n° entre] = entreeg.[n°entree] INNER JOIN fournisseur ON dentreeg.nFourn = fournisseur.[n° fournisseur] WHERE entreeg.[date entree] >= @fromDate AND entreeg.[date entree] <= @toDate and composant.[nom article] like @nomArticle and composant.[type article] like @typeArticle";
             SqlCommand cmd = new SqlCommand(query, bd);
             cmd.Parameters.Add("@fromDate", SqlDbType.Date).Value = fromDate.Date;
             cmd.Parameters.Add("@toDate", SqlDbType.Date).Value = toDate.Date;
@@ -113,7 +112,7 @@ namespace FD_STOCK
             
             tableau.Rows.Clear();
             bd.Open();
-            SqlCommand cmd = new SqlCommand("SELECT entreeg.[n°entree], fournisseur.denomination, entreeg.[type piece], entreeg.[n° piece], composant.[type article], composant.[nom article],composant.[color], dentreeg.quantite,dentreeg.boxNumber ,dentreeg.[prix achatht], composant.tva, entreeg.[entree par],  entreeg.[date entree] FROM dentreeg INNER JOIN composant ON dentreeg.[n° article] = composant.[n° article] INNER JOIN entreeg ON dentreeg.[n° entre] = entreeg.[n°entree] INNER JOIN fournisseur ON dentreeg.nFourn = fournisseur.[n° fournisseur] ", bd);
+            SqlCommand cmd = new SqlCommand("SELECT entreeg.[n°entree], fournisseur.denomination, entreeg.[type piece], entreeg.[n° piece], composant.[type article], composant.[nom article],composant.[color], dentreeg.quantite,dentreeg.boxNumber ,dentreeg.[prix achatht], entreeg.[entree par],  entreeg.[date entree] FROM dentreeg INNER JOIN composant ON dentreeg.[n° article] = composant.[n° article] INNER JOIN entreeg ON dentreeg.[n° entre] = entreeg.[n°entree] INNER JOIN fournisseur ON dentreeg.nFourn = fournisseur.[n° fournisseur] ", bd);
             SqlDataReader rd = cmd.ExecuteReader();
             if (rd.HasRows == true)
             {
@@ -131,8 +130,7 @@ namespace FD_STOCK
                    rd[8],
                    rd[9],
                    rd[10],
-                   rd[11],
-                   rd.GetDateTime(12).ToString("dd/MM/yyyy")
+                   rd.GetDateTime(11).ToString("dd/MM/yyyy")
                    );
                 }
             }
