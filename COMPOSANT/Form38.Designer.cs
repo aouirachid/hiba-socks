@@ -480,6 +480,7 @@ namespace FD_STOCK
             this.teg.ReadOnly = true;
             this.teg.Size = new System.Drawing.Size(368, 22);
             this.teg.TabIndex = 253;
+            this.teg.TextChanged += new System.EventHandler(this.teg_TextChanged);
             // 
             // label1
             // 
