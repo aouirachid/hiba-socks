@@ -15,7 +15,6 @@ namespace FD_STOCK
 {
     public partial class eg : Form
     {
-        int npr;
         private Debouncer searchDebouncer = new Debouncer(500);
         static string cons = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
         SqlConnection bd = new SqlConnection(cons);
@@ -24,14 +23,21 @@ namespace FD_STOCK
             InitializeComponent();
         }
 
+        private void checkStatus()
+        {
+            if (bd.State == ConnectionState.Open)
+            {
+                bd.Close();
+            }
+        }
+
         private void Enregistrer_Click(object sender, EventArgs e)
         {
             try
             {
-                if (bd.State == ConnectionState.Open)
-                {
-                    bd.Close();
-                }
+                checkStatus();
+                Enregistrer.Enabled = false;
+                Ajouter_Click(sender, e);
                 if (teg.Text != "" && tableau.Rows.Count > 1)
                 {
                     bd.Open();
@@ -67,15 +73,18 @@ namespace FD_STOCK
 
                     bd.Close();
                     Nouveau_Click(sender, e);
+                    Enregistrer.Enabled = true;
                 }
                 else
                 {
                     MessageBox.Show("SAISIE INCOMPLETE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Enregistrer.Enabled = true;
                 }
             }
             catch
             {
                 MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Enregistrer.Enabled = true;
             }
 
         }
@@ -115,33 +124,6 @@ namespace FD_STOCK
             }
         }
 
-        private void npro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-       
-
-       
-
-        private void teg_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (teg.SelectedIndex == 0)
-            {
-                nBox.Text = "MAT-";
-            }
-            else if (teg.SelectedIndex == 1)
-            {
-                nBox.Text = "EM-";
-            }
-            else
-            {
-                nBox.Text = "PDR-";
-            }
-
-        }
-
-        
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -158,15 +140,13 @@ namespace FD_STOCK
         {
             teg.Text = "";
             tdee.Text = "";
+            nBox.Text = "";
             npe.Clear();
             epe.Clear();
             nf.Clear();
             fo.Clear();
             tableau.Rows.Clear();
-            // modifier.Enabled = false;
-            // supprimer.Enabled = false;
-            // enregistrer.Enabled = true;
-            teg.Select();
+            nRef.Select();
         }
 
         private void Femer_Click(object sender, EventArgs e)
@@ -209,25 +189,24 @@ namespace FD_STOCK
             {
                 searchDebouncer.Debounce(() =>
                 {
-                    if (bd.State == ConnectionState.Open)
-                    {
-                        bd.Close();
-                    }
+                    checkStatus();
                     bd.Open();
                     SqlCommand cmd = new SqlCommand("select*from composant where [reference]=@nReference", bd);
                     cmd.Parameters.AddWithValue("@nReference", nRef.Text);
                     SqlDataReader rd = cmd.ExecuteReader();
                     if (rd.Read()) // Check if a record was actually found
                 {
-                        npro.Text = rd[0].ToString();
-                        nc.Text = rd.GetValue(4).ToString();
-                        pah.Text = rd.GetValue(6).ToString();
-                        ttva.Text = rd.GetValue(7).ToString();
+                        npro.Text = rd[0].ToString().Trim();
+                        teg.Text = rd[1].ToString().Trim();
+                        nc.Text = rd[4].ToString().Trim();
+                        pah.Text = rd[6].ToString().Trim();
+                        ttva.Text = rd[7].ToString().Trim();
                     }
                     else
                     {
-                    // Clear the fields if no match is found
-                    nc.Text = "";
+                        // Clear the fields if no match is found
+                        teg.Text = "";
+                        nc.Text = "";
                         pah.Text = "";
                         ttva.Text = "";
                     }
@@ -239,6 +218,20 @@ namespace FD_STOCK
             
         }
 
-        
+        private void teg_TextChanged(object sender, EventArgs e)
+        {
+            if (teg.Text == "Emballage")
+            {
+                nBox.Text = "MAT-";
+            }
+            else if (teg.Text == "Matiére 1 ére")
+            {
+                nBox.Text = "EM-";
+            }
+            else
+            {
+                nBox.Text = "PDR-";
+            }
+        }
     }
 }
