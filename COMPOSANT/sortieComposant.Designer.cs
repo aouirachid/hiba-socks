@@ -176,6 +176,7 @@ namespace FD_STOCK.COMPOSANT
             this.Enregistrer.TabIndex = 258;
             this.Enregistrer.Text = "Enregistrer";
             this.Enregistrer.UseVisualStyleBackColor = false;
+            this.Enregistrer.Visible = false;
             // 
             // Ajouter
             // 
