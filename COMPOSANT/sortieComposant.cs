@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
+using Ex = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 
 namespace FD_STOCK.COMPOSANT
 {
@@ -101,10 +104,12 @@ namespace FD_STOCK.COMPOSANT
                 nComposant.Text = val_Ref;
                 tsg.Text = val_Type;
                 nBox.BackColor = Color.LightGreen; // Visual Feedback: Found!
-
+                DateTime sortieDate = dds.Value;
+                string sortiePar = sp.Text;
                 // --- STEP C: AUTO SAVE (Immediate Transaction) ---
                 // We pass the variables directly, not reading from UI (safer)
                 PerformSafeTransaction(val_Type, val_Ref, val_Qte, boxNumber);
+                printBonSortie(sortieDate, val_Type, sortiePar,val_Nom,boxNumber,val_Qte);
             }
             catch (Exception ex)
             {
@@ -154,7 +159,6 @@ namespace FD_STOCK.COMPOSANT
                 // Visual Success Indicator (Optional: Play a sound)
                  System.Media.SystemSounds.Beep.Play();
                 MessageBox.Show("ENREGISTREMENT EFFECTUEE AVEC SUCCEES", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 // Wait a split second so user sees the data, then clear?
                 // Or keep it there until next scan.
                  clear(); 
@@ -190,6 +194,55 @@ namespace FD_STOCK.COMPOSANT
             }
         }
 
+        private void printBonSortie(DateTime sortieDate,string articleType,string sortiePar,string composantName,string boxNumber,float qte)
+        {
+            const string root = "DMRproduction";
+            string myDocsRoot = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                root);
+            string appRoot = Path.Combine(Environment.CurrentDirectory, root);
+
+            string bonSortieComposant = Path.Combine(myDocsRoot, "BON SORTIE COMPOSANT");
+            string bonSortieComposantBak = Path.Combine(appRoot, "BON SORTIE COMPOSANT");
+
+            foreach (var dir in new[] { bonSortieComposant, bonSortieComposantBak })
+                if (!Directory.Exists(dir))
+                    Directory.CreateDirectory(dir);
+
+
+            Ex.Application app = new Ex.Application();
+            Ex.Workbooks books;
+            books = app.Workbooks;
+            Ex.Workbook book;
+            book = books.Open(Environment.CurrentDirectory + "\\bonSortieComposant.xlsx");
+            Ex._Worksheet ws = book.ActiveSheet;
+            ws.Cells[10, 3] = sortieDate;
+            ws.Cells[11, 3] = articleType;
+            ws.Cells[12, 3] = sortiePar;
+            ws.Cells[18, 1] = composantName;
+            ws.Cells[18, 6] = boxNumber;
+            ws.Cells[18, 7] = qte;
+
+            string dateSuffix = DateTime.Now.ToString("yyyyMMdd_HHmm");
+            //Save the document as PDF in the specified directories
+            string pdfOutputPath = Path.Combine(bonSortieComposant, "Bon de sortie composant " + boxNumber + " " + dateSuffix + ".pdf");
+            book.ExportAsFixedFormat(Ex.XlFixedFormatType.xlTypePDF, pdfOutputPath);
+
+            string pdfbackupDirectory = Path.Combine(bonSortieComposantBak, "Bon Depensse " + boxNumber + " " + dateSuffix + ".pdf");
+            book.ExportAsFixedFormat(Ex.XlFixedFormatType.xlTypePDF, pdfbackupDirectory);
+
+            //Open the saved PDF document
+            System.Diagnostics.Process.Start(pdfOutputPath);
+
+            // Close the Word document without saving changes
+            book.Close(false);
+            Marshal.ReleaseComObject(book);
+
+            // Quit Word Application
+            app.Quit();
+            Marshal.ReleaseComObject(app);
+
+        }
         
     }
 }
