@@ -49,6 +49,15 @@ namespace FD_STOCK
 
             PrintDocument pd = new PrintDocument();
             pd.PrintPage += new PrintPageEventHandler(ConstructTicketLayout);
+            //pd.DefaultPageSettings.PaperSize = new PaperSize("Custom", 315, 315);
+            // UNCOMMENT TO TEST 58mm width
+            pd.DefaultPageSettings.PaperSize = new PaperSize("SmallRoll", 228, 315);
+
+            PrintPreviewDialog preview = new PrintPreviewDialog();
+            preview.Document = pd;
+            preview.Width = 600;
+            preview.Height = 800;
+            preview.ShowDialog();
 
             pd.PrinterSettings.PrinterName = printerName;
 
@@ -82,7 +91,7 @@ namespace FD_STOCK
             float leftMargin = 10;
 
             // This is the "Tab" position where all values will start aligned
-            float valueXPosition = 110;
+            float valueXPosition = pageWidth * 0.40f;
 
             // Fonts
             Font titleFont = new Font("Arial", 14, FontStyle.Bold);
@@ -120,7 +129,7 @@ namespace FD_STOCK
                 Bitmap barcodeImg = GenerateBarcodeBitmap(_currentTicket.BoxNumber);
                 if (barcodeImg != null)
                 {
-                    float barcodeWidth = 200;
+                    float barcodeWidth = pageWidth * 0.80f;
                     float barcodeHeight = 50;
                     float centerImageX = (pageWidth - barcodeWidth) / 2;
 
