@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 using Microsoft.VisualBasic;
+using System.Drawing.Printing;
+using ZXing;
+using ZXing.Common;
 
 namespace FD_STOCK
 {
@@ -18,9 +21,158 @@ namespace FD_STOCK
         private Debouncer searchDebouncer = new Debouncer(500);
         static string cons = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
         SqlConnection bd = new SqlConnection(cons);
+        string printerName = ConfigurationManager.AppSettings["printerName"];
         public eg()
         {
             InitializeComponent();
+        }
+
+        // 1. Define a class to hold the ticket data temporarily
+        public class TicketData
+        {
+            public string CompanyName { get; set; } = "Hiba socks";
+            public string ComposantName { get; set; }
+            public string Reference { get; set; }
+            public string Quantity { get; set; }
+            public string Date { get; set; }
+            public string User { get; set; }
+            public string Supplier { get; set; }
+            public string BoxNumber { get; set; } // For Barcode
+        }
+
+        // Variable to hold data for the current print job
+        private TicketData _currentTicket;
+
+        private void PrintTicket(TicketData data)
+        {
+            _currentTicket = data;
+
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(ConstructTicketLayout);
+
+            pd.PrinterSettings.PrinterName = printerName;
+
+            try
+            {
+                pd.Print();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Printing Failed: " + ex.Message);
+            }
+        }
+
+        private void DrawAlignedLineItem(Graphics g, string label, string value, Font labelFont, Font valueFont, float labelX, float valueX, ref float y)
+        {
+            // 1. Draw the Label (Left side)
+            g.DrawString(label, labelFont, Brushes.Black, labelX, y);
+
+            // 2. Draw the Value (Fixed position on the Right)
+            g.DrawString(value, valueFont, Brushes.Black, valueX, y);
+
+            // 3. Move down for the next line
+            y += 20;
+        }
+
+        private void ConstructTicketLayout(object sender, PrintPageEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            float pageWidth = e.PageBounds.Width;
+            float yPos = 10;
+            float leftMargin = 10;
+
+            // This is the "Tab" position where all values will start aligned
+            float valueXPosition = 110;
+
+            // Fonts
+            Font titleFont = new Font("Arial", 14, FontStyle.Bold);
+            Font headerFont = new Font("Arial", 10, FontStyle.Bold);
+            Font bodyFont = new Font("Arial", 9, FontStyle.Regular);
+            Font valueFont = new Font("Arial", 9, FontStyle.Bold); // Optional: Make values bold?
+
+            StringFormat centerFormat = new StringFormat { Alignment = StringAlignment.Center };
+
+            // --- 1. HEADERS (Centered) ---
+            g.DrawString(_currentTicket.CompanyName, titleFont, Brushes.Black,
+                new RectangleF(0, yPos, pageWidth, 30), centerFormat);
+            yPos += 30;
+
+            g.DrawString(_currentTicket.ComposantName, headerFont, Brushes.Black,
+                new RectangleF(0, yPos, pageWidth, 25), centerFormat);
+            yPos += 25;
+
+            g.DrawLine(Pens.Black, leftMargin, yPos, pageWidth - leftMargin, yPos);
+            yPos += 10;
+
+            // --- 2. DETAILS (Aligned Columns) ---
+            // We use the new helper method here
+            DrawAlignedLineItem(g, "Référence:", _currentTicket.Reference, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+            DrawAlignedLineItem(g, "Quantité:", _currentTicket.Quantity, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+            DrawAlignedLineItem(g, "Date:", _currentTicket.Date, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+            DrawAlignedLineItem(g, "Entrée par:", _currentTicket.User, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+            DrawAlignedLineItem(g, "Fournisseur:", _currentTicket.Supplier, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+
+            yPos += 20;
+
+            // --- 3. BARCODE (Centered) ---
+            if (!string.IsNullOrEmpty(_currentTicket.BoxNumber))
+            {
+                Bitmap barcodeImg = GenerateBarcodeBitmap(_currentTicket.BoxNumber);
+                if (barcodeImg != null)
+                {
+                    float barcodeWidth = 200;
+                    float barcodeHeight = 50;
+                    float centerImageX = (pageWidth - barcodeWidth) / 2;
+
+                    g.DrawImage(barcodeImg, centerImageX, yPos, barcodeWidth, barcodeHeight);
+
+                    yPos += barcodeHeight + 5;
+                    g.DrawString(_currentTicket.BoxNumber, bodyFont, Brushes.Black,
+                        new RectangleF(0, yPos, pageWidth, 20), centerFormat);
+                }
+            }
+        }
+
+        // Helper to draw text lines clearly
+        private void DrawLineItem(Graphics g, string label, string value, Font font, float x, ref float y)
+        {
+            g.DrawString($"{label} {value}", font, Brushes.Black, x, y);
+            y += 20; // Move down for next line
+        }
+
+        // Adapted from your code to return a Bitmap directly
+        private Bitmap GenerateBarcodeBitmap(string content)
+        {
+            try
+            {
+                var writer = new BarcodeWriterPixelData
+                {
+                    Format = BarcodeFormat.CODE_128,
+                    Options = new EncodingOptions
+                    {
+                        Height = 60,
+                        Width = 180,
+                        Margin = 1,
+                        PureBarcode = true
+                    }
+                };
+
+                var pixelData = writer.Write(content);
+
+                // Create bitmap from pixel data
+                Bitmap bitmap = new Bitmap(pixelData.Width, pixelData.Height, System.Drawing.Imaging.PixelFormat.Format32bppRgb);
+                var bitmapData = bitmap.LockBits(new Rectangle(0, 0, pixelData.Width, pixelData.Height),
+                    System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format32bppRgb);
+
+                System.Runtime.InteropServices.Marshal.Copy(pixelData.Pixels, 0, bitmapData.Scan0, pixelData.Pixels.Length);
+                bitmap.UnlockBits(bitmapData);
+
+                return bitmap;
+            }
+            catch
+            {
+                return null; // Handle error or return empty
+            }
         }
 
         private void checkStatus()
@@ -35,6 +187,17 @@ namespace FD_STOCK
         {
             try
             {
+                TicketData ticketToPrint = new TicketData
+                {
+                    ComposantName = nc.Text,      // Nom de composant
+                    Reference = nRef.Text,        // Reference Number
+                    Quantity = qu.Text,           // Quantity
+                    Date = ddee.Value.ToString("dd/MM/yyyy"), // Date Entree
+                    User = epe.Text,              // Entree par
+                    Supplier = fo.Text,           // Fournisseur Name
+                    BoxNumber = nBox.Text         // Barcode content
+                };
+
                 checkStatus();
                 Enregistrer.Enabled = false;
                 Ajouter_Click(sender, e);
@@ -68,7 +231,7 @@ namespace FD_STOCK
                         cm.ExecuteNonQuery();
 
                     }
-
+                    PrintTicket(ticketToPrint);
                     MessageBox.Show("ENREGISTREMENT EFFECTUEE AVEC SUCCEES.", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     bd.Close();
@@ -84,6 +247,7 @@ namespace FD_STOCK
             catch
             {
                 MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (bd.State == ConnectionState.Open) bd.Close();
                 Enregistrer.Enabled = true;
             }
 
