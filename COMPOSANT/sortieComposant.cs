@@ -40,8 +40,7 @@ namespace FD_STOCK.COMPOSANT
                 bd.Close();
             }
         }
-
-        
+                
         private void sortieComposant_Load(object sender, EventArgs e)
         {
 
@@ -68,7 +67,7 @@ namespace FD_STOCK.COMPOSANT
                 string query = @"select c.[nom article], deg.[quantite], deg.[n° article], c.[type article] 
                          from dentreeg deg 
                          join composant c on deg.[n° article] = c.[n° article] 
-                         where deg.boxNumber = @boxNumber";
+                         where deg.boxNumber = @boxNumber and deg.isOut = 0";
 
                 SqlCommand fetchCmd = new SqlCommand(query, bd);
                 fetchCmd.Parameters.AddWithValue("@boxNumber", boxNumber);
@@ -153,6 +152,12 @@ namespace FD_STOCK.COMPOSANT
                 cmd3.Parameters.AddWithValue("@qte", qte);
                 cmd3.Parameters.AddWithValue("@ref", refArt);
                 cmd3.ExecuteNonQuery();
+
+                // 3. Update isOut (set the isOut = 1 mean box is out)
+                string q4 = "update dentreeg set isOut = 1 where [boxNumber] = @boxNumber";
+                SqlCommand cmd4 = new SqlCommand(q4, bd, transaction);
+                cmd4.Parameters.AddWithValue("@boxNumber", boxNum);
+                cmd4.ExecuteNonQuery();
 
                 transaction.Commit();
 
@@ -243,6 +248,7 @@ namespace FD_STOCK.COMPOSANT
             Marshal.ReleaseComObject(app);
 
         }
+
         
     }
 }
