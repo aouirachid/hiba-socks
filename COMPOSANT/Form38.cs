@@ -51,7 +51,8 @@ namespace FD_STOCK
             pd.PrintPage += new PrintPageEventHandler(ConstructTicketLayout);
             //pd.DefaultPageSettings.PaperSize = new PaperSize("Custom", 315, 315);
             // UNCOMMENT TO TEST 58mm width
-            pd.DefaultPageSettings.PaperSize = new PaperSize("SmallRoll", 228, 315);
+            //pd.DefaultPageSettings.PaperSize = new PaperSize("SmallRoll", 228, 315);
+            pd.DefaultPageSettings.PaperSize = new PaperSize("SmallRoll", 236, 236);
 
             PrintPreviewDialog preview = new PrintPreviewDialog();
             preview.Document = pd;
@@ -106,9 +107,9 @@ namespace FD_STOCK
                 new RectangleF(0, yPos, pageWidth, 30), centerFormat);
             yPos += 30;
 
-            g.DrawString(_currentTicket.ComposantName, headerFont, Brushes.Black,
-                new RectangleF(0, yPos, pageWidth, 25), centerFormat);
-            yPos += 25;
+            //g.DrawString(_currentTicket.ComposantName, headerFont, Brushes.Black,
+            //    new RectangleF(0, yPos, pageWidth, 25), centerFormat);
+            //yPos += 25;
 
             g.DrawLine(Pens.Black, leftMargin, yPos, pageWidth - leftMargin, yPos);
             yPos += 10;
@@ -116,12 +117,13 @@ namespace FD_STOCK
             // --- 2. DETAILS (Aligned Columns) ---
             // We use the new helper method here
             DrawAlignedLineItem(g, "Référence:", _currentTicket.Reference, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+            DrawAlignedLineItem(g, " Composant:", _currentTicket.ComposantName, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
             DrawAlignedLineItem(g, "Quantité:", _currentTicket.Quantity, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
             DrawAlignedLineItem(g, "Date:", _currentTicket.Date, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
             DrawAlignedLineItem(g, "Entrée par:", _currentTicket.User, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
             DrawAlignedLineItem(g, "Fournisseur:", _currentTicket.Supplier, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
 
-            yPos += 20;
+            yPos += 5;
 
             // --- 3. BARCODE (Centered) ---
             if (!string.IsNullOrEmpty(_currentTicket.BoxNumber))
@@ -130,7 +132,7 @@ namespace FD_STOCK
                 if (barcodeImg != null)
                 {
                     float barcodeWidth = pageWidth * 0.80f;
-                    float barcodeHeight = 50;
+                    float barcodeHeight = 30;
                     float centerImageX = (pageWidth - barcodeWidth) / 2;
 
                     g.DrawImage(barcodeImg, centerImageX, yPos, barcodeWidth, barcodeHeight);
@@ -159,7 +161,7 @@ namespace FD_STOCK
                     Format = BarcodeFormat.CODE_128,
                     Options = new EncodingOptions
                     {
-                        Height = 60,
+                        Height = 30,
                         Width = 180,
                         Margin = 1,
                         PureBarcode = true
@@ -395,11 +397,11 @@ namespace FD_STOCK
         {
             if (teg.Text == "Emballage")
             {
-                nBox.Text = "MAT-";
+                nBox.Text = "EM-";
             }
             else if (teg.Text == "Matiére 1 ére")
             {
-                nBox.Text = "EM-";
+                nBox.Text = "MAT-";
             }
             else
             {
