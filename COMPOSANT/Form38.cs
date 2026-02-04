@@ -215,6 +215,18 @@ namespace FD_STOCK
                 if (teg.Text != "" && tableau.Rows.Count > 1)
                 {
                     bd.Open();
+                    var targetBox = tableau.Rows[0].Cells[3].Value?.ToString();
+                    string query = "SELECT COUNT(1) FROM dentreeg WHERE boxNumber = @boxNumber";
+                    SqlCommand command = new SqlCommand(query, bd);
+                    command.Parameters.AddWithValue("@boxNumber", targetBox);
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        Nouveau_Click(sender, e);
+                        MessageBox.Show("Box deja existe", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return; // Stop execution because it exists
+                    }
+
                     SqlCommand cmd = new SqlCommand("insert into entreeg ([type dentree],[type piece],[n° piece],[date entree],[entree par]) values('" + teg.Text + "','" + tdee.Text + "','" + npe.Text + "','" + ddee.Value.ToString() + "','" + epe.Text + "')", bd);
                     cmd.ExecuteNonQuery();
 
@@ -317,11 +329,11 @@ namespace FD_STOCK
             tdee.Text = "";
             nBox.Text = "";
             npe.Clear();
-            epe.Clear();
             nf.Clear();
             fo.Clear();
             tableau.Rows.Clear();
             nRef.Select();
+            Enregistrer.Enabled = true;
         }
 
         private void Femer_Click(object sender, EventArgs e)
