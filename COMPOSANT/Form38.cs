@@ -49,10 +49,14 @@ namespace FD_STOCK
 
             PrintDocument pd = new PrintDocument();
             pd.PrintPage += new PrintPageEventHandler(ConstructTicketLayout);
+<<<<<<< HEAD
             //pd.DefaultPageSettings.PaperSize = new PaperSize("Custom", 315, 315);
             // UNCOMMENT TO TEST 58mm width
             //pd.DefaultPageSettings.PaperSize = new PaperSize("SmallRoll", 228, 315);
             pd.DefaultPageSettings.PaperSize = new PaperSize("SmallRoll", 236, 236);
+=======
+            pd.DefaultPageSettings.PaperSize = new PaperSize("SmallRoll", 236, 260);
+>>>>>>> 3f76472 (print size)
 
             PrintPreviewDialog preview = new PrintPreviewDialog();
             preview.Document = pd;
@@ -60,7 +64,6 @@ namespace FD_STOCK
             preview.Height = 800;
             preview.ShowDialog();
 
-            pd.PrinterSettings.PrinterName = printerName;
 
             try
             {
@@ -117,13 +120,21 @@ namespace FD_STOCK
             // --- 2. DETAILS (Aligned Columns) ---
             // We use the new helper method here
             DrawAlignedLineItem(g, "Référence:", _currentTicket.Reference, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+<<<<<<< HEAD
             DrawAlignedLineItem(g, " Composant:", _currentTicket.ComposantName, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+=======
+            DrawAlignedLineItem(g, "composant:", _currentTicket.ComposantName, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+>>>>>>> 3f76472 (print size)
             DrawAlignedLineItem(g, "Quantité:", _currentTicket.Quantity, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
             DrawAlignedLineItem(g, "Date:", _currentTicket.Date, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
             DrawAlignedLineItem(g, "Entrée par:", _currentTicket.User, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
             DrawAlignedLineItem(g, "Fournisseur:", _currentTicket.Supplier, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
 
+<<<<<<< HEAD
             yPos += 5;
+=======
+            yPos += 10;
+>>>>>>> 3f76472 (print size)
 
             // --- 3. BARCODE (Centered) ---
             if (!string.IsNullOrEmpty(_currentTicket.BoxNumber))
@@ -131,8 +142,13 @@ namespace FD_STOCK
                 Bitmap barcodeImg = GenerateBarcodeBitmap(_currentTicket.BoxNumber);
                 if (barcodeImg != null)
                 {
+<<<<<<< HEAD
                     float barcodeWidth = pageWidth * 0.80f;
                     float barcodeHeight = 30;
+=======
+                    float barcodeWidth = 200;
+                    float barcodeHeight = 40;
+>>>>>>> 3f76472 (print size)
                     float centerImageX = (pageWidth - barcodeWidth) / 2;
 
                     g.DrawImage(barcodeImg, centerImageX, yPos, barcodeWidth, barcodeHeight);
@@ -161,7 +177,11 @@ namespace FD_STOCK
                     Format = BarcodeFormat.CODE_128,
                     Options = new EncodingOptions
                     {
+<<<<<<< HEAD
                         Height = 30,
+=======
+                        Height = 40,
+>>>>>>> 3f76472 (print size)
                         Width = 180,
                         Margin = 1,
                         PureBarcode = true
@@ -266,7 +286,7 @@ namespace FD_STOCK
                     MessageBox.Show("SAISIE INCOMPLETE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Enregistrer.Enabled = true;
                 }
-            }
+        }
             catch
             {
                 MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -274,7 +294,7 @@ namespace FD_STOCK
                 Enregistrer.Enabled = true;
             }
 
-        }
+}
 
         private void Ajouter_Click(object sender, EventArgs e)
         {
