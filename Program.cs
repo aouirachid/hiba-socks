@@ -43,7 +43,7 @@ namespace FD_STOCK
             // Application.Run(new lsem());
             // Application.Run(new MDIParent1());
             //Application.Run(new paymentFournisseur());
-            Application.Run(new menur());
+            Application.Run(new conx());
             //Application.Run(new npg());
             //Application.Run(new utilisateur());
             //Application.Run(new listePieceRechange());
