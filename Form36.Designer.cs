@@ -1152,6 +1152,7 @@ namespace FD_STOCK
             this.Name = "menur";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form36";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.menur_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

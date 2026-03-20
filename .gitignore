@@ -1,0 +1,35 @@
+# --- GLOBAL SAFETY RULES (The Fix) ---
+# Ignore these files no matter where they are
+*.exe
+*.pdb
+*.dll
+*.user
+*.suo
+
+# --- Bin Folder Logic ---
+# Ignore everything in bin by default
+bin/*
+/bin/debug/'BON DE LIVRAISON'
+/bin/debug/DMRproduction
+/bin/debug/factures
+
+# ...But allow Git to look inside subdirectories (for your Excel/Word files)
+!/bin/*/
+
+# Force ignore the binaries again just to be safe inside bin
+bin/**/*.exe
+bin/**/*.pdb
+bin/**/*.dll
+bin/**/*.config
+
+# Keep your specific templates
+!/bin/**/*.xlsx
+!/bin/**/*.docx
+!/bin/**/*.doc
+
+# --- Standard Visual Studio Ignores ---
+[Oo]bj/
+.vs/
+/packages/
+*.nupkg
+*.sln.docstates

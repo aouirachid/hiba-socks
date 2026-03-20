@@ -36,18 +36,6 @@ namespace FD_STOCK
             this.r = new System.Windows.Forms.Label();
             this.f = new System.Windows.Forms.Button();
             this.tableau = new System.Windows.Forms.DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rec = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -62,7 +50,23 @@ namespace FD_STOCK
             this.toDate = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.fromDate = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tableau)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button36
@@ -74,7 +78,7 @@ namespace FD_STOCK
             this.button36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button36.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
-            this.button36.Location = new System.Drawing.Point(26, 35);
+            this.button36.Location = new System.Drawing.Point(26, 13);
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(25, 33);
             this.button36.TabIndex = 215;
@@ -103,7 +107,7 @@ namespace FD_STOCK
             this.exportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exportBtn.ForeColor = System.Drawing.Color.White;
-            this.exportBtn.Location = new System.Drawing.Point(936, 682);
+            this.exportBtn.Location = new System.Drawing.Point(903, 566);
             this.exportBtn.Name = "exportBtn";
             this.exportBtn.Size = new System.Drawing.Size(186, 28);
             this.exportBtn.TabIndex = 212;
@@ -133,10 +137,10 @@ namespace FD_STOCK
             // r
             // 
             this.r.AutoSize = true;
-            this.r.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r.Location = new System.Drawing.Point(324, 100);
+            this.r.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r.Location = new System.Drawing.Point(278, 25);
             this.r.Name = "r";
-            this.r.Size = new System.Drawing.Size(100, 16);
+            this.r.Size = new System.Drawing.Size(93, 15);
             this.r.TabIndex = 208;
             this.r.Text = "Nom d\'article";
             // 
@@ -147,7 +151,7 @@ namespace FD_STOCK
             this.f.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.f.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.f.ForeColor = System.Drawing.Color.White;
-            this.f.Location = new System.Drawing.Point(744, 682);
+            this.f.Location = new System.Drawing.Point(711, 566);
             this.f.Name = "f";
             this.f.Size = new System.Drawing.Size(186, 28);
             this.f.TabIndex = 211;
@@ -168,119 +172,47 @@ namespace FD_STOCK
             this.Column9,
             this.Column12,
             this.Column2,
+            this.nBox,
             this.Column4,
-            this.Column8,
             this.Column7,
             this.Column10});
-            this.tableau.Location = new System.Drawing.Point(16, 132);
+            this.tableau.Location = new System.Drawing.Point(14, 19);
             this.tableau.Name = "tableau";
-            this.tableau.Size = new System.Drawing.Size(1105, 542);
+            this.tableau.Size = new System.Drawing.Size(1075, 541);
             this.tableau.TabIndex = 210;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "N° d\'entrée";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 70;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Fornisseur";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 80;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Type de piéce";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 85;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "N° de piéce";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 85;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Type de composant";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 85;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Nom de composant";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 85;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Couleur";
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 85;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Quantité";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 85;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Prix achat HT";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 85;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Taux de la tva (%)";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 85;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Entrée par";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 85;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Date d\'entrée";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 120;
             // 
             // rec
             // 
             this.rec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rec.Location = new System.Drawing.Point(430, 94);
+            this.rec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rec.Location = new System.Drawing.Point(377, 19);
             this.rec.Name = "rec";
-            this.rec.Size = new System.Drawing.Size(196, 22);
+            this.rec.Size = new System.Drawing.Size(159, 21);
             this.rec.TabIndex = 209;
             this.rec.TextChanged += new System.EventHandler(this.rec_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 100);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 16);
+            this.label1.Size = new System.Drawing.Size(93, 15);
             this.label1.TabIndex = 216;
             this.label1.Text = "Type d\'article";
             // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "",
             "Matiére 1 ére",
             "Emballage",
             "Piéce de rechange"});
-            this.comboBox1.Location = new System.Drawing.Point(123, 92);
+            this.comboBox1.Location = new System.Drawing.Point(113, 19);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 24);
+            this.comboBox1.Size = new System.Drawing.Size(159, 21);
             this.comboBox1.TabIndex = 217;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -324,7 +256,7 @@ namespace FD_STOCK
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 694);
+            this.label11.Location = new System.Drawing.Point(14, 578);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(101, 16);
             this.label11.TabIndex = 310;
@@ -335,7 +267,7 @@ namespace FD_STOCK
             this.TEC.AutoSize = true;
             this.TEC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TEC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
-            this.TEC.Location = new System.Drawing.Point(112, 690);
+            this.TEC.Location = new System.Drawing.Point(113, 574);
             this.TEC.Name = "TEC";
             this.TEC.Size = new System.Drawing.Size(49, 24);
             this.TEC.TabIndex = 311;
@@ -345,10 +277,10 @@ namespace FD_STOCK
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(803, 100);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(738, 25);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(26, 16);
+            this.label9.Size = new System.Drawing.Size(23, 15);
             this.label9.TabIndex = 319;
             this.label9.Text = "Au";
             // 
@@ -356,21 +288,21 @@ namespace FD_STOCK
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(632, 99);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(542, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 16);
+            this.label2.Size = new System.Drawing.Size(25, 15);
             this.label2.TabIndex = 318;
             this.label2.Text = "Du";
             // 
             // toDate
             // 
             this.toDate.CustomFormat = "dd/MM/yyyy";
-            this.toDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.toDate.Location = new System.Drawing.Point(835, 94);
+            this.toDate.Location = new System.Drawing.Point(767, 19);
             this.toDate.Name = "toDate";
-            this.toDate.Size = new System.Drawing.Size(132, 22);
+            this.toDate.Size = new System.Drawing.Size(159, 21);
             this.toDate.TabIndex = 317;
             // 
             // button2
@@ -380,7 +312,7 @@ namespace FD_STOCK
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(973, 94);
+            this.button2.Location = new System.Drawing.Point(941, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 22);
             this.button2.TabIndex = 316;
@@ -391,45 +323,138 @@ namespace FD_STOCK
             // fromDate
             // 
             this.fromDate.CustomFormat = "dd/MM/yyyy";
-            this.fromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fromDate.Location = new System.Drawing.Point(665, 94);
+            this.fromDate.Location = new System.Drawing.Point(573, 19);
             this.fromDate.Name = "fromDate";
-            this.fromDate.Size = new System.Drawing.Size(132, 22);
+            this.fromDate.Size = new System.Drawing.Size(159, 21);
             this.fromDate.TabIndex = 315;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.toDate);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.r);
+            this.groupBox1.Controls.Add(this.fromDate);
+            this.groupBox1.Controls.Add(this.rec);
+            this.groupBox1.Location = new System.Drawing.Point(14, 50);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1110, 60);
+            this.groupBox1.TabIndex = 320;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tableau);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.TEC);
+            this.groupBox2.Controls.Add(this.exportBtn);
+            this.groupBox2.Controls.Add(this.f);
+            this.groupBox2.Location = new System.Drawing.Point(14, 116);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1110, 594);
+            this.groupBox2.TabIndex = 321;
+            this.groupBox2.TabStop = false;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "N° d\'entrée";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 83;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Fornisseur";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 85;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Type de piéce";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 83;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "N° de piéce";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 83;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Type de composant";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 110;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Nom de composant";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 110;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Couleur";
+            this.Column12.Name = "Column12";
+            this.Column12.Width = 64;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Quantité";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 64;
+            // 
+            // nBox
+            // 
+            this.nBox.HeaderText = "N Box";
+            this.nBox.Name = "nBox";
+            this.nBox.Width = 64;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Prix achat HT";
+            this.Column4.Name = "Column4";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Entrée par";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 83;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Date d\'entrée";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 83;
             // 
             // leg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 722);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.toDate);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.fromDate);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.TEC);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button36);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.exportBtn);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.r);
-            this.Controls.Add(this.f);
-            this.Controls.Add(this.tableau);
-            this.Controls.Add(this.rec);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "leg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Liste entrée générale";
             this.Load += new System.EventHandler(this.leg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableau)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,6 +483,8 @@ namespace FD_STOCK
         private System.Windows.Forms.DateTimePicker toDate;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DateTimePicker fromDate;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -466,8 +493,8 @@ namespace FD_STOCK
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }

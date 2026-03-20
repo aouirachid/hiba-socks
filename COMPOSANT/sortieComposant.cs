@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
+using Ex = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 
 namespace FD_STOCK.COMPOSANT
 {
     public partial class sortieComposant : Form
     {
+        private Debouncer searchDebouncer = new Debouncer(500);
         static string cons = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
         SqlConnection bd = new SqlConnection(cons);
         public sortieComposant()
@@ -22,227 +26,229 @@ namespace FD_STOCK.COMPOSANT
         }
         private void clear()
         {
-            tsg.Text="";
-            npro.Text = "";
-            nc.Text = "";
             qu.Text = "0.00";
-            tableau.Rows.Clear();
+            nc.Clear();
+            nComposant.Clear(); 
+            tsg.Clear();
+            nBox.Clear();
+            nBox.BackColor = Color.White;
         }
-
-        private void Enregistrer_Click(object sender, EventArgs e)
+        private void checkStatus()
         {
-           // try
-           // {
-                if (bd.State == ConnectionState.Open)
-                {
-                    bd.Close();
-                }
-                if (tsg.Text != "" && tableau.Rows.Count > 1)
-                {
-                    bd.Open();
-                    SqlCommand cmd = new SqlCommand("insert into sortieg values( @typeComposant,@dateSortie,@sortiePar)", bd);
-                    cmd.Parameters.AddWithValue("@typeComposant", tsg.Text);
-                    cmd.Parameters.AddWithValue("@dateSortie", dds.Value.ToString());
-                    cmd.Parameters.AddWithValue("@sortiePar", sp.Text);
-                    cmd.ExecuteNonQuery();
-                    SqlCommand cmd1 = new SqlCommand("select top(1) nSortie from sortieg order by nSortie desc", bd);
-                    SqlDataReader rd = cmd1.ExecuteReader();
-                    rd.Read();
-                    int ndee = Convert.ToInt32(rd.GetValue(0));
-                    rd.Close();
-                    for (int i = 0; i < tableau.Rows.Count - 1; i++)
-                    {
-                        SqlCommand cmd2 = new SqlCommand("insert into dsortieg values(@nSortie,@nComposatnt,@qte)", bd);
-                        cmd2.Parameters.AddWithValue("@nSortie", ndee.ToString());
-                        cmd2.Parameters.AddWithValue("@nComposatnt", tableau.Rows[i].Cells[0].Value.ToString());
-                        cmd2.Parameters.AddWithValue("@qte", tableau.Rows[i].Cells[2].Value.ToString());
-                        cmd2.ExecuteNonQuery();
-                        SqlCommand cd = new SqlCommand("select*from composant where [n° article]='" + tableau.Rows[i].Cells[0].Value.ToString() + "'", bd);
-                        SqlDataReader rb = cd.ExecuteReader();
-                        rb.Read();
-                        float qs = Convert.ToSingle(rb.GetValue(5)) - Convert.ToSingle(tableau.Rows[i].Cells[2].Value);
-                        rb.Close();
-                        SqlCommand cm = new SqlCommand("update composant set [stock]='" + qs.ToString() + "' where [n° article]='" + tableau.Rows[i].Cells[0].Value.ToString() + "'", bd);
-                        cm.ExecuteNonQuery();
-
-                    }
-
-                    MessageBox.Show("ENREGISTREMENT EFFECTUEE AVEC SUCCEES.", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    bd.Close();
-                    clear();
-                }
-                else
-                {
-                    MessageBox.Show("SAISIE INCOMPLETE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-           // }
-           // catch
-           // {
-           //     MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-           // }
+            if (bd.State == ConnectionState.Open)
+            {
+                bd.Close();
+            }
         }
-
+                
         private void sortieComposant_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void tsg_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (bd.State == ConnectionState.Open)
-                {
-                    bd.Close();
-                }
-                bd.Open();
-                if (tsg.SelectedIndex == 0)
-                {
-                    SqlCommand cmd = new SqlCommand("select*from composant where [type article] = 'Matiére 1 ére'", bd);
-                    SqlDataReader rd = cmd.ExecuteReader();
-                    npro.Items.Clear();
-                    while (rd.Read())
-                    {
-                        npro.Items.Add(rd.GetValue(0));
-                    }
-                    rd.Close();
-
-
-                }
-                else if (tsg.SelectedIndex == 1)
-                {
-                    SqlCommand cmd = new SqlCommand("select*from composant where [type article] = 'Emballage'", bd);
-                    SqlDataReader rd = cmd.ExecuteReader();
-                    npro.Items.Clear();
-                    while (rd.Read())
-                    {
-                        npro.Items.Add(rd.GetValue(0));
-                    }
-                    rd.Close();
-                }
-                else
-                {
-                    SqlCommand cmd1 = new SqlCommand("select*from composant where [type article] = 'Piéce de rechange'", bd);
-                    SqlDataReader rd1 = cmd1.ExecuteReader();
-                    npro.Items.Clear();
-                    while (rd1.Read())
-                    {
-                        npro.Items.Add(rd1.GetValue(0).ToString().Trim());
-                    }
-                }
-                bd.Close();
-            }
-            catch
-            {
-                MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void npro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (bd.State == ConnectionState.Open)
-                {
-                    bd.Close();
-                }
-                bd.Open();
-                if (tsg.SelectedIndex == 0)
-                {
-                    SqlCommand cmd = new SqlCommand("select*from composant where [n° article]='" + npro.Text + "'", bd);
-                    SqlDataReader rd = cmd.ExecuteReader();
-                    rd.Read();
-                    nc.Text = rd.GetValue(4).ToString();
-                    rd.Close();
-                }
-
-                else if (tsg.SelectedIndex == 1)
-                {
-                    SqlCommand cmd = new SqlCommand("select*from composant where [n° article]='" + npro.Text + "'", bd);
-                    SqlDataReader rd = cmd.ExecuteReader();
-                    rd.Read();
-                    nc.Text = rd.GetValue(4).ToString();
-                    rd.Close();
-
-                }
-                else
-                {
-                    SqlCommand cmd = new SqlCommand("select*from composant where [n° article]='" + npro.Text + "'", bd);
-                    SqlDataReader rd = cmd.ExecuteReader();
-                    rd.Read();
-                    nc.Text = rd.GetValue(4).ToString();
-                    rd.Close();
-                }
-                bd.Close();
-                qu.Select();
-            }
-            catch
-            {
-                MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnNa_Click(object sender, EventArgs e)
-        {
-            lpg x = new lpg();
-            x.WindowState = FormWindowState.Normal;
-            x.ShowDialog();
-        }
-
-        private void Ajouter_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (npro.Text != "" && float.TryParse(qu.Text, out float quantite) && quantite > 0)
-                {
-                    for (int i = 0; i < tableau.Rows.Count - 1; i++)
-                    {
-                        if (tableau.Rows[i].Cells[0].Value.ToString() == npro.Text)
-                        {
-                            MessageBox.Show(" COMPOSANT DEJA AJOUTER", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                    }
-                    tableau.Rows.Add(
-                    npro.Text,
-                    nc.Text,
-                    qu.Text
-                    );
-                    npro.Text = ""; nc.Clear(); qu.Text = "0.00";
-                }
-                else
-                {
-                    MessageBox.Show("SAISIE INCOMPLETE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("SAISIE INCORRECTE", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void tableau_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == tableau.Columns["Supprimer"].Index && e.RowIndex >= 0)
-            {
-                if (tableau.Rows[e.RowIndex].Cells["Supprimer"].Value != null)
-                {
-                    // Get the row to be deleted
-                    DataGridViewRow row = tableau.Rows[e.RowIndex];
-
-                    // Perform your delete logic here
-                    // For example, you can delete the row from a data source
-                    // and then remove it from the DataGridView
-                    // data source.Remove(row.DataBoundItem); // Adjust this line as per your data source
-                    tableau.Rows.Remove(row);
-                }
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void ProcessBoxAndAutoSave(string boxNumber)
+        {
+            // 1. Reset UI to avoid mixing old data with new
+            ClearFieldsButKeepBox();
+
+            // 2. Validate Box
+            if (string.IsNullOrEmpty(boxNumber)) return;
+
+            try
+            {
+                bd.Open();
+
+                // --- STEP A: FETCH DATA ---
+                // We fetch data to memory first. We do NOT rely on Textboxes for storage.
+                string query = @"select c.[nom article], deg.[quantite], deg.[n° article], c.[type article] 
+                         from dentreeg deg 
+                         join composant c on deg.[n° article] = c.[n° article] 
+                         where deg.boxNumber = @boxNumber and deg.isOut = 0";
+
+                SqlCommand fetchCmd = new SqlCommand(query, bd);
+                fetchCmd.Parameters.AddWithValue("@boxNumber", boxNumber);
+
+                SqlDataReader rd = fetchCmd.ExecuteReader();
+
+                // Variables to hold data for the subsequent Save
+                string val_Nom = "", val_Type = "", val_Ref = "";
+                float val_Qte = 0;
+                bool found = false;
+
+                if (rd.Read())
+                {
+                    val_Nom = rd[0].ToString().Trim();
+                    val_Qte = Convert.ToSingle(rd[1]); // Store as number
+                    val_Ref = rd[2].ToString().Trim();
+                    val_Type = rd[3].ToString().Trim();
+                    found = true;
+                }
+                rd.Close(); // Close reader immediately so we can start a Transaction
+
+                if (!found)
+                {
+                    // Visual feedback for "Not Found"
+                    nBox.BackColor = Color.Red;
+                    bd.Close();
+                    return;
+                }
+
+                // --- STEP B: POPULATE UI (For User Visibility) ---
+                nc.Text = val_Nom;
+                qu.Text = val_Qte.ToString();
+                nComposant.Text = val_Ref;
+                tsg.Text = val_Type;
+                nBox.BackColor = Color.LightGreen; // Visual Feedback: Found!
+                DateTime sortieDate = dds.Value;
+                string sortiePar = sp.Text;
+                // --- STEP C: AUTO SAVE (Immediate Transaction) ---
+                // We pass the variables directly, not reading from UI (safer)
+                PerformSafeTransaction(val_Type, val_Ref, val_Qte, boxNumber);
+                printBonSortie(sortieDate, val_Type, sortiePar,val_Nom,boxNumber,val_Qte);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error processing scan: " + ex.Message);
+            }
+            finally
+            {
+                checkStatus();
+            }
+        }
+
+        private void PerformSafeTransaction(string typeArt, string refArt, float qte, string boxNum)
+        {
+            SqlTransaction transaction = bd.BeginTransaction();
+
+            try
+            {
+                // 1. Insert Sortie & Get ID safely
+                string q1 = @"insert into sortieg values (@type, @date, @user); 
+                      SELECT CAST(SCOPE_IDENTITY() as int);";
+
+                SqlCommand cmd1 = new SqlCommand(q1, bd, transaction);
+                cmd1.Parameters.AddWithValue("@type", typeArt);
+                cmd1.Parameters.AddWithValue("@date", dds.Value);
+                cmd1.Parameters.AddWithValue("@user", sp.Text); // Assuming 'admin' is here
+
+                int newSortieID = (int)cmd1.ExecuteScalar();
+
+                // 2. Insert Detail
+                string q2 = "insert into dsortieg values (@nSortie, @ref, @qte, @box)";
+                SqlCommand cmd2 = new SqlCommand(q2, bd, transaction);
+                cmd2.Parameters.AddWithValue("@nSortie", newSortieID);
+                cmd2.Parameters.AddWithValue("@ref", refArt);
+                cmd2.Parameters.AddWithValue("@qte", qte);
+                cmd2.Parameters.AddWithValue("@box", boxNum);
+                cmd2.ExecuteNonQuery();
+
+                // 3. Update Stock (Atomic Update)
+                string q3 = "update composant set stock = stock - @qte where [n° article] = @ref";
+                SqlCommand cmd3 = new SqlCommand(q3, bd, transaction);
+                cmd3.Parameters.AddWithValue("@qte", qte);
+                cmd3.Parameters.AddWithValue("@ref", refArt);
+                cmd3.ExecuteNonQuery();
+
+                // 3. Update isOut (set the isOut = 1 mean box is out)
+                string q4 = "update dentreeg set isOut = 1 where [boxNumber] = @boxNumber";
+                SqlCommand cmd4 = new SqlCommand(q4, bd, transaction);
+                cmd4.Parameters.AddWithValue("@boxNumber", boxNum);
+                cmd4.ExecuteNonQuery();
+
+                transaction.Commit();
+
+                // Visual Success Indicator (Optional: Play a sound)
+                 System.Media.SystemSounds.Beep.Play();
+                MessageBox.Show("ENREGISTREMENT EFFECTUEE AVEC SUCCEES", "HIBA SOCKS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Wait a split second so user sees the data, then clear?
+                // Or keep it there until next scan.
+                 clear(); 
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                MessageBox.Show("Transaction Failed: " + ex.Message);
+                nBox.BackColor = Color.Orange; // Visual error
+            }
+        }
+
+        // Helper to keep the UI clean
+        private void ClearFieldsButKeepBox()
+        {
+            nc.Clear(); qu.Clear(); nComposant.Clear(); tsg.Clear();
+            nBox.BackColor = Color.White;
+        }
+
+        private void nBox_TextChanged(object sender, EventArgs e)
+        {
+            if (nBox.Text != "")
+            {
+                // Debounce to wait for the scanner to finish typing the digits
+                searchDebouncer.Debounce(() =>
+                {
+                    // IMPORTANT: Move back to the UI thread to touch UI controls safely
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        ProcessBoxAndAutoSave(nBox.Text);
+                    });
+                });
+            }
+        }
+
+        private void printBonSortie(DateTime sortieDate,string articleType,string sortiePar,string composantName,string boxNumber,float qte)
+        {
+            const string root = "DMRproduction";
+            string myDocsRoot = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                root);
+            string appRoot = Path.Combine(Environment.CurrentDirectory, root);
+
+            string bonSortieComposant = Path.Combine(myDocsRoot, "BON SORTIE COMPOSANT");
+            string bonSortieComposantBak = Path.Combine(appRoot, "BON SORTIE COMPOSANT");
+
+            foreach (var dir in new[] { bonSortieComposant, bonSortieComposantBak })
+                if (!Directory.Exists(dir))
+                    Directory.CreateDirectory(dir);
+
+
+            Ex.Application app = new Ex.Application();
+            Ex.Workbooks books;
+            books = app.Workbooks;
+            Ex.Workbook book;
+            book = books.Open(Environment.CurrentDirectory + "\\bonSortieComposant.xlsx");
+            Ex._Worksheet ws = book.ActiveSheet;
+            ws.Cells[10, 3] = sortieDate;
+            ws.Cells[11, 3] = articleType;
+            ws.Cells[12, 3] = sortiePar;
+            ws.Cells[18, 1] = composantName;
+            ws.Cells[18, 6] = boxNumber;
+            ws.Cells[18, 7] = qte;
+
+            string dateSuffix = DateTime.Now.ToString("yyyyMMdd_HHmm");
+            //Save the document as PDF in the specified directories
+            string pdfOutputPath = Path.Combine(bonSortieComposant, "Bon de sortie composant " + boxNumber + " " + dateSuffix + ".pdf");
+            book.ExportAsFixedFormat(Ex.XlFixedFormatType.xlTypePDF, pdfOutputPath);
+
+            string pdfbackupDirectory = Path.Combine(bonSortieComposantBak, "Bon Depensse " + boxNumber + " " + dateSuffix + ".pdf");
+            book.ExportAsFixedFormat(Ex.XlFixedFormatType.xlTypePDF, pdfbackupDirectory);
+
+            //Open the saved PDF document
+            System.Diagnostics.Process.Start(pdfOutputPath);
+
+            // Close the Word document without saving changes
+            book.Close(false);
+            Marshal.ReleaseComObject(book);
+
+            // Quit Word Application
+            app.Quit();
+            Marshal.ReleaseComObject(app);
+
+        }
+
+        
     }
 }

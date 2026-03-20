@@ -44,11 +44,75 @@ namespace FD_STOCK
 
             TEC.Text = total.ToString();
         }
-        private void leg_Load(object sender, EventArgs e)
+
+        private void filterInputBox(string typeArticle, string nomArticle)
+        {
+            bd.Open();
+            tableau.Rows.Clear();
+            SqlCommand cmd = new SqlCommand("SELECT entreeg.[n°entree], fournisseur.denomination, entreeg.[type piece], entreeg.[n° piece], composant.[type article], composant.[nom article],composant.color, dentreeg.quantite, dentreeg.boxNumber,dentreeg.[prix achatht], entreeg.[entree par],  entreeg.[date entree] FROM dentreeg INNER JOIN composant ON dentreeg.[n° article] = composant.[n° article] INNER JOIN entreeg ON dentreeg.[n° entre] = entreeg.[n°entree] INNER JOIN fournisseur ON dentreeg.nFourn = fournisseur.[n° fournisseur] where composant.[type article] like @typeArticle and composant.[nom article] like @nomArticle ", bd);
+            cmd.Parameters.AddWithValue("@typeArticle", typeArticle + "%");
+            cmd.Parameters.AddWithValue("@nomArticle", nomArticle + "%");
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                tableau.Rows.Add(
+                    rd[0],
+                    rd[1],
+                   rd[2],
+                   rd[3],
+                   rd[4],
+                   rd[5],
+                   rd[6],
+                   rd[7],
+                   rd[8],
+                   rd[9],
+                   rd[10],
+                   rd.GetDateTime(11).ToString("dd/MM/yyyy")
+                   );
+            }
+            bd.Close();
+            UpdateTCLabel();
+        }
+
+        private void filterWithDate(string typeArticle, string nomArticle,DateTime fromDate, DateTime toDate)
         {
             tableau.Rows.Clear();
             bd.Open();
-            SqlCommand cmd = new SqlCommand("SELECT entreeg.[n°entree], fournisseur.denomination, entreeg.[type piece], entreeg.[n° piece], composant.[type article], composant.[nom article],composant.[color], dentreeg.quantite, dentreeg.[prix achatht], composant.tva, entreeg.[entree par],  entreeg.[date entree] FROM dentreeg INNER JOIN composant ON dentreeg.[n° article] = composant.[n° article] INNER JOIN entreeg ON dentreeg.[n° entre] = entreeg.[n°entree] INNER JOIN fournisseur ON dentreeg.nFourn = fournisseur.[n° fournisseur] ", bd);
+            string query = "SELECT entreeg.[n°entree], fournisseur.denomination, entreeg.[type piece], entreeg.[n° piece], composant.[type article], composant.[nom article],composant.color, dentreeg.quantite, dentreeg.[prix achatht], entreeg.[entree par],  entreeg.[date entree] FROM dentreeg INNER JOIN composant ON dentreeg.[n° article] = composant.[n° article] INNER JOIN entreeg ON dentreeg.[n° entre] = entreeg.[n°entree] INNER JOIN fournisseur ON dentreeg.nFourn = fournisseur.[n° fournisseur] WHERE entreeg.[date entree] >= @fromDate AND entreeg.[date entree] <= @toDate and composant.[nom article] like @nomArticle and composant.[type article] like @typeArticle";
+            SqlCommand cmd = new SqlCommand(query, bd);
+            cmd.Parameters.Add("@fromDate", SqlDbType.Date).Value = fromDate.Date;
+            cmd.Parameters.Add("@toDate", SqlDbType.Date).Value = toDate.Date;
+            cmd.Parameters.AddWithValue("@typeArticle", typeArticle + "%");
+            cmd.Parameters.AddWithValue("@nomArticle", nomArticle + "%");
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                tableau.Rows.Add(
+                    rd[0],
+                    rd[1],
+                   rd[2],
+                   rd[3],
+                   rd[4],
+                   rd[5],
+                   rd[6],
+                   rd[7],
+                   rd[8],
+                   rd[9],
+                   rd[10],
+                   rd.GetDateTime(11).ToString("dd/MM/yyyy")
+                   );
+            }
+            bd.Close();
+            UpdateTCLabel();
+        }
+
+
+        private void leg_Load(object sender, EventArgs e)
+        {
+            
+            tableau.Rows.Clear();
+            bd.Open();
+            SqlCommand cmd = new SqlCommand("SELECT entreeg.[n°entree], fournisseur.denomination, entreeg.[type piece], entreeg.[n° piece], composant.[type article], composant.[nom article],composant.[color], dentreeg.quantite,dentreeg.boxNumber ,dentreeg.[prix achatht], entreeg.[entree par],  entreeg.[date entree] FROM dentreeg INNER JOIN composant ON dentreeg.[n° article] = composant.[n° article] INNER JOIN entreeg ON dentreeg.[n° entre] = entreeg.[n°entree] INNER JOIN fournisseur ON dentreeg.nFourn = fournisseur.[n° fournisseur] ", bd);
             SqlDataReader rd = cmd.ExecuteReader();
             if (rd.HasRows == true)
             {
@@ -81,60 +145,12 @@ namespace FD_STOCK
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bd.Open();
-            tableau.Rows.Clear();
-            SqlCommand cmd = new SqlCommand("SELECT entreeg.[n°entree], fournisseur.denomination, entreeg.[type piece], entreeg.[n° piece], composant.[type article], composant.[nom article],composant.color, dentreeg.quantite, dentreeg.[prix achatht], composant.tva, entreeg.[entree par],  entreeg.[date entree] FROM dentreeg INNER JOIN composant ON dentreeg.[n° article] = composant.[n° article] INNER JOIN entreeg ON dentreeg.[n° entre] = entreeg.[n°entree] INNER JOIN fournisseur ON dentreeg.nFourn = fournisseur.[n° fournisseur] where composant.[type article] like @typeArticle and composant.[nom article] like @nomArticle ", bd);
-            cmd.Parameters.AddWithValue("@typeArticle", comboBox1.Text + "%");
-            cmd.Parameters.AddWithValue("@nomArticle", rec.Text + "%");
-            SqlDataReader rd = cmd.ExecuteReader();
-            while (rd.Read())
-            {
-                tableau.Rows.Add(
-                    rd[0],
-                    rd[1],
-                   rd[2],
-                   rd[3],
-                   rd[4],
-                   rd[5],
-                   rd[6],
-                   rd[7],
-                   rd[8],
-                   rd[9],
-                   rd[10],
-                   rd.GetDateTime(11).ToString("dd/MM/yyyy")
-                   );
-            }
-            bd.Close();
-            UpdateTCLabel();
+            filterInputBox(comboBox1.Text, rec.Text);
         }
 
         private void rec_TextChanged(object sender, EventArgs e)
         {
-            bd.Open();
-            tableau.Rows.Clear();
-            SqlCommand cmd = new SqlCommand("SELECT entreeg.[n°entree], fournisseur.denomination, entreeg.[type piece], entreeg.[n° piece], composant.[type article], composant.[nom article],composant.color, dentreeg.quantite, dentreeg.[prix achatht], composant.tva, entreeg.[entree par],  entreeg.[date entree] FROM dentreeg INNER JOIN composant ON dentreeg.[n° article] = composant.[n° article] INNER JOIN entreeg ON dentreeg.[n° entre] = entreeg.[n°entree] INNER JOIN fournisseur ON dentreeg.nFourn = fournisseur.[n° fournisseur] where composant.[nom article] like @nomArticle and composant.[type article] like @typeArticle ", bd);
-            cmd.Parameters.AddWithValue("@typeArticle", comboBox1.Text + "%");
-            cmd.Parameters.AddWithValue("@nomArticle", rec.Text + "%");
-            SqlDataReader rd = cmd.ExecuteReader();
-            while (rd.Read())
-            {
-                tableau.Rows.Add(
-                    rd[0],
-                    rd[1],
-                   rd[2],
-                   rd[3],
-                   rd[4],
-                   rd[5],
-                   rd[6],
-                   rd[7],
-                   rd[8],
-                   rd[9],
-                   rd[10],
-                   rd.GetDateTime(11).ToString("dd/MM/yyyy")
-                   );
-            }
-            bd.Close();
-            UpdateTCLabel();
+            filterInputBox(comboBox1.Text, rec.Text);
         }
 
         private void exportBtn_Click(object sender, EventArgs e)
@@ -185,34 +201,7 @@ namespace FD_STOCK
 
         private void button2_Click(object sender, EventArgs e)
         {
-            tableau.Rows.Clear();
-            bd.Open();
-            string query = "SELECT entreeg.[n°entree], fournisseur.denomination, entreeg.[type piece], entreeg.[n° piece], composant.[type article], composant.[nom article],composant.color, dentreeg.quantite, dentreeg.[prix achatht], composant.tva, entreeg.[entree par],  entreeg.[date entree] FROM dentreeg INNER JOIN composant ON dentreeg.[n° article] = composant.[n° article] INNER JOIN entreeg ON dentreeg.[n° entre] = entreeg.[n°entree] INNER JOIN fournisseur ON dentreeg.nFourn = fournisseur.[n° fournisseur] WHERE entreeg.[date entree] >= @fromDate AND entreeg.[date entree] <= @toDate and composant.[nom article] like @nomArticle and composant.[type article] like @typeArticle";
-            SqlCommand cmd = new SqlCommand(query, bd);
-            cmd.Parameters.AddWithValue("@fromDate", fromDate.Value.Date);
-            cmd.Parameters.AddWithValue("@toDate", toDate.Value.Date.AddDays(1));
-            cmd.Parameters.AddWithValue("@typeArticle", comboBox1.Text + "%");
-            cmd.Parameters.AddWithValue("@nomArticle", rec.Text + "%");
-            SqlDataReader rd = cmd.ExecuteReader();
-            while (rd.Read())
-            {
-                tableau.Rows.Add(
-                    rd[0],
-                    rd[1],
-                   rd[2],
-                   rd[3],
-                   rd[4],
-                   rd[5],
-                   rd[6],
-                   rd[7],
-                   rd[8],
-                   rd[9],
-                   rd[10],
-                   rd.GetDateTime(11).ToString("dd/MM/yyyy")
-                   );
-            }
-            bd.Close();
-            UpdateTCLabel();
+            filterWithDate(comboBox1.Text, rec.Text,fromDate.Value,toDate.Value);
         }
     }
 }
