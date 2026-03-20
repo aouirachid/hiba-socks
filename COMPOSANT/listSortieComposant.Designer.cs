@@ -43,13 +43,6 @@ namespace FD_STOCK.COMPOSANT
             this.r = new System.Windows.Forms.Label();
             this.f = new System.Windows.Forms.Button();
             this.tableau = new System.Windows.Forms.DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.TSC = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,7 +50,18 @@ namespace FD_STOCK.COMPOSANT
             this.toDate = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.fromDate = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tableau)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel5
@@ -89,36 +93,36 @@ namespace FD_STOCK.COMPOSANT
             // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "",
             "Matiére 1 ére",
             "Emballage",
             "Piéce de rechange"});
-            this.comboBox1.Location = new System.Drawing.Point(133, 86);
+            this.comboBox1.Location = new System.Drawing.Point(113, 19);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(193, 24);
+            this.comboBox1.Size = new System.Drawing.Size(159, 21);
             this.comboBox1.TabIndex = 260;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 93);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 16);
+            this.label1.Size = new System.Drawing.Size(93, 15);
             this.label1.TabIndex = 259;
             this.label1.Text = "Type d\'article";
             // 
             // rec
             // 
             this.rec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rec.Location = new System.Drawing.Point(438, 88);
+            this.rec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rec.Location = new System.Drawing.Point(377, 19);
             this.rec.Name = "rec";
-            this.rec.Size = new System.Drawing.Size(193, 22);
+            this.rec.Size = new System.Drawing.Size(159, 21);
             this.rec.TabIndex = 252;
             this.rec.TextChanged += new System.EventHandler(this.rec_TextChanged);
             // 
@@ -140,7 +144,7 @@ namespace FD_STOCK.COMPOSANT
             this.button36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button36.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
-            this.button36.Location = new System.Drawing.Point(12, 29);
+            this.button36.Location = new System.Drawing.Point(12, 8);
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(25, 33);
             this.button36.TabIndex = 258;
@@ -166,9 +170,9 @@ namespace FD_STOCK.COMPOSANT
             this.exportBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
             this.exportBtn.FlatAppearance.BorderSize = 0;
             this.exportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exportBtn.ForeColor = System.Drawing.Color.White;
-            this.exportBtn.Location = new System.Drawing.Point(940, 682);
+            this.exportBtn.Location = new System.Drawing.Point(903, 566);
             this.exportBtn.Name = "exportBtn";
             this.exportBtn.Size = new System.Drawing.Size(186, 28);
             this.exportBtn.TabIndex = 255;
@@ -198,10 +202,10 @@ namespace FD_STOCK.COMPOSANT
             // r
             // 
             this.r.AutoSize = true;
-            this.r.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r.Location = new System.Drawing.Point(332, 94);
+            this.r.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r.Location = new System.Drawing.Point(278, 25);
             this.r.Name = "r";
-            this.r.Size = new System.Drawing.Size(100, 16);
+            this.r.Size = new System.Drawing.Size(93, 15);
             this.r.TabIndex = 251;
             this.r.Text = "Nom d\'article";
             // 
@@ -210,9 +214,9 @@ namespace FD_STOCK.COMPOSANT
             this.f.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
             this.f.FlatAppearance.BorderSize = 0;
             this.f.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.f.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.f.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.f.ForeColor = System.Drawing.Color.White;
-            this.f.Location = new System.Drawing.Point(748, 682);
+            this.f.Location = new System.Drawing.Point(711, 566);
             this.f.Name = "f";
             this.f.Size = new System.Drawing.Size(186, 28);
             this.f.TabIndex = 254;
@@ -232,57 +236,16 @@ namespace FD_STOCK.COMPOSANT
             this.Column2,
             this.Column7,
             this.Column10});
-            this.tableau.Location = new System.Drawing.Point(25, 132);
+            this.tableau.Location = new System.Drawing.Point(14, 19);
             this.tableau.Name = "tableau";
-            this.tableau.Size = new System.Drawing.Size(1101, 534);
+            this.tableau.Size = new System.Drawing.Size(1075, 541);
             this.tableau.TabIndex = 253;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "N de sortie";
-            this.Column5.Name = "Column5";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Type de composant";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Nom de composant";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 150;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Couleur";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 140;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Quantite";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 140;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Sortie par";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 150;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Date de sortie";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 200;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(23, 694);
+            this.label11.Location = new System.Drawing.Point(11, 578);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(97, 16);
             this.label11.TabIndex = 308;
@@ -293,7 +256,7 @@ namespace FD_STOCK.COMPOSANT
             this.TSC.AutoSize = true;
             this.TSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TSC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
-            this.TSC.Location = new System.Drawing.Point(118, 689);
+            this.TSC.Location = new System.Drawing.Point(106, 573);
             this.TSC.Name = "TSC";
             this.TSC.Size = new System.Drawing.Size(49, 24);
             this.TSC.TabIndex = 309;
@@ -303,10 +266,10 @@ namespace FD_STOCK.COMPOSANT
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(808, 94);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(738, 25);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(26, 16);
+            this.label9.Size = new System.Drawing.Size(23, 15);
             this.label9.TabIndex = 314;
             this.label9.Text = "Au";
             // 
@@ -314,10 +277,10 @@ namespace FD_STOCK.COMPOSANT
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(637, 94);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(542, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 16);
+            this.label2.Size = new System.Drawing.Size(25, 15);
             this.label2.TabIndex = 313;
             this.label2.Text = "Du";
             // 
@@ -325,11 +288,11 @@ namespace FD_STOCK.COMPOSANT
             // 
             this.toDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toDate.CustomFormat = "dd/MM/yyyy";
-            this.toDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.toDate.Location = new System.Drawing.Point(840, 87);
+            this.toDate.Location = new System.Drawing.Point(767, 19);
             this.toDate.Name = "toDate";
-            this.toDate.Size = new System.Drawing.Size(132, 22);
+            this.toDate.Size = new System.Drawing.Size(159, 21);
             this.toDate.TabIndex = 312;
             // 
             // button2
@@ -339,7 +302,7 @@ namespace FD_STOCK.COMPOSANT
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(978, 88);
+            this.button2.Location = new System.Drawing.Point(939, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 22);
             this.button2.TabIndex = 311;
@@ -350,45 +313,109 @@ namespace FD_STOCK.COMPOSANT
             // fromDate
             // 
             this.fromDate.CustomFormat = "dd/MM/yyyy";
-            this.fromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fromDate.Location = new System.Drawing.Point(670, 88);
+            this.fromDate.Location = new System.Drawing.Point(573, 19);
             this.fromDate.Name = "fromDate";
-            this.fromDate.Size = new System.Drawing.Size(132, 22);
+            this.fromDate.Size = new System.Drawing.Size(159, 21);
             this.fromDate.TabIndex = 310;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.toDate);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.r);
+            this.groupBox1.Controls.Add(this.fromDate);
+            this.groupBox1.Controls.Add(this.rec);
+            this.groupBox1.Location = new System.Drawing.Point(14, 50);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1110, 50);
+            this.groupBox1.TabIndex = 315;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tableau);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.TSC);
+            this.groupBox2.Controls.Add(this.exportBtn);
+            this.groupBox2.Controls.Add(this.f);
+            this.groupBox2.Location = new System.Drawing.Point(12, 106);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1110, 600);
+            this.groupBox2.TabIndex = 316;
+            this.groupBox2.TabStop = false;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "N de sortie";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 135;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Type de composant";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 165;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Nom de composant";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 165;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Couleur";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 135;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Quantite";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 135;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Sortie par";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 135;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Date de sortie";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 135;
             // 
             // listSortieComposant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 722);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.toDate);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.fromDate);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.TSC);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.rec);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button36);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.exportBtn);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.r);
-            this.Controls.Add(this.f);
-            this.Controls.Add(this.tableau);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "listSortieComposant";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "listSortieComposant";
             this.Load += new System.EventHandler(this.listSortieComposant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableau)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,6 +444,8 @@ namespace FD_STOCK.COMPOSANT
         private System.Windows.Forms.DateTimePicker toDate;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DateTimePicker fromDate;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;

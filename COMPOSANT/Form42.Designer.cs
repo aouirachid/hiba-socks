@@ -49,6 +49,8 @@ namespace FD_STOCK
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.color = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +58,8 @@ namespace FD_STOCK
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tableau)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label8
@@ -92,10 +96,10 @@ namespace FD_STOCK
             // pah
             // 
             this.pah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pah.Location = new System.Drawing.Point(163, 173);
+            this.pah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pah.Location = new System.Drawing.Point(151, 102);
             this.pah.Name = "pah";
-            this.pah.Size = new System.Drawing.Size(326, 22);
+            this.pah.Size = new System.Drawing.Size(326, 21);
             this.pah.TabIndex = 171;
             this.pah.Text = "0.00";
             this.pah.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -103,48 +107,48 @@ namespace FD_STOCK
             // nda
             // 
             this.nda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nda.Location = new System.Drawing.Point(163, 145);
+            this.nda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nda.Location = new System.Drawing.Point(151, 75);
             this.nda.Name = "nda";
-            this.nda.Size = new System.Drawing.Size(326, 22);
+            this.nda.Size = new System.Drawing.Size(326, 21);
             this.nda.TabIndex = 169;
             // 
             // nr
             // 
             this.nr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nr.Location = new System.Drawing.Point(163, 117);
+            this.nr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nr.Location = new System.Drawing.Point(151, 48);
             this.nr.Name = "nr";
-            this.nr.Size = new System.Drawing.Size(326, 22);
+            this.nr.Size = new System.Drawing.Size(326, 21);
             this.nr.TabIndex = 168;
             // 
             // pa
             // 
             this.pa.AutoSize = true;
-            this.pa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pa.Location = new System.Drawing.Point(15, 179);
+            this.pa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pa.Location = new System.Drawing.Point(14, 108);
             this.pa.Name = "pa";
-            this.pa.Size = new System.Drawing.Size(114, 16);
+            this.pa.Size = new System.Drawing.Size(105, 15);
             this.pa.TabIndex = 167;
             this.pa.Text = "Prix d\'achat HT";
             // 
             // ndp
             // 
             this.ndp.AutoSize = true;
-            this.ndp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ndp.Location = new System.Drawing.Point(15, 151);
+            this.ndp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ndp.Location = new System.Drawing.Point(14, 81);
             this.ndp.Name = "ndp";
-            this.ndp.Size = new System.Drawing.Size(142, 16);
+            this.ndp.Size = new System.Drawing.Size(131, 15);
             this.ndp.TabIndex = 165;
             this.ndp.Text = "Nom de composant";
             // 
             // r
             // 
             this.r.AutoSize = true;
-            this.r.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r.Location = new System.Drawing.Point(15, 123);
+            this.r.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r.Location = new System.Drawing.Point(14, 54);
             this.r.Name = "r";
-            this.r.Size = new System.Drawing.Size(116, 16);
+            this.r.Size = new System.Drawing.Size(108, 15);
             this.r.TabIndex = 164;
             this.r.Text = "N° de référence";
             // 
@@ -153,9 +157,9 @@ namespace FD_STOCK
             this.modifier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
             this.modifier.FlatAppearance.BorderSize = 0;
             this.modifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modifier.ForeColor = System.Drawing.Color.White;
-            this.modifier.Location = new System.Drawing.Point(163, 210);
+            this.modifier.Location = new System.Drawing.Point(151, 129);
             this.modifier.Name = "modifier";
             this.modifier.Size = new System.Drawing.Size(160, 28);
             this.modifier.TabIndex = 176;
@@ -168,9 +172,9 @@ namespace FD_STOCK
             this.enregistrer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
             this.enregistrer.FlatAppearance.BorderSize = 0;
             this.enregistrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.enregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enregistrer.ForeColor = System.Drawing.Color.White;
-            this.enregistrer.Location = new System.Drawing.Point(329, 210);
+            this.enregistrer.Location = new System.Drawing.Point(317, 129);
             this.enregistrer.Name = "enregistrer";
             this.enregistrer.Size = new System.Drawing.Size(160, 28);
             this.enregistrer.TabIndex = 175;
@@ -181,10 +185,10 @@ namespace FD_STOCK
             // rec
             // 
             this.rec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rec.Location = new System.Drawing.Point(172, 315);
+            this.rec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rec.Location = new System.Drawing.Point(168, 21);
             this.rec.Name = "rec";
-            this.rec.Size = new System.Drawing.Size(948, 22);
+            this.rec.Size = new System.Drawing.Size(936, 21);
             this.rec.TabIndex = 174;
             this.rec.TextChanged += new System.EventHandler(this.rec_TextChanged);
             // 
@@ -193,11 +197,11 @@ namespace FD_STOCK
             this.rechercher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(103)))));
             this.rechercher.FlatAppearance.BorderSize = 0;
             this.rechercher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rechercher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rechercher.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rechercher.ForeColor = System.Drawing.Color.White;
-            this.rechercher.Location = new System.Drawing.Point(18, 315);
+            this.rechercher.Location = new System.Drawing.Point(14, 19);
             this.rechercher.Name = "rechercher";
-            this.rechercher.Size = new System.Drawing.Size(148, 22);
+            this.rechercher.Size = new System.Drawing.Size(148, 23);
             this.rechercher.TabIndex = 173;
             this.rechercher.Text = "Rechercher";
             this.rechercher.UseVisualStyleBackColor = false;
@@ -213,33 +217,33 @@ namespace FD_STOCK
             this.Column10,
             this.Column2,
             this.Column4});
-            this.tableau.Location = new System.Drawing.Point(18, 353);
+            this.tableau.Location = new System.Drawing.Point(14, 48);
             this.tableau.Name = "tableau";
             this.tableau.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableau.Size = new System.Drawing.Size(1102, 357);
+            this.tableau.Size = new System.Drawing.Size(1090, 412);
             this.tableau.TabIndex = 172;
             // 
             // ta
             // 
-            this.ta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ta.FormattingEnabled = true;
             this.ta.Items.AddRange(new object[] {
             "Matiére 1 ére",
             "Emballage",
             "Piéce de rechange"});
-            this.ta.Location = new System.Drawing.Point(163, 87);
+            this.ta.Location = new System.Drawing.Point(151, 19);
             this.ta.Name = "ta";
-            this.ta.Size = new System.Drawing.Size(160, 24);
+            this.ta.Size = new System.Drawing.Size(160, 23);
             this.ta.TabIndex = 186;
             this.ta.SelectedIndexChanged += new System.EventHandler(this.ta_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 95);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 16);
+            this.label1.Size = new System.Drawing.Size(111, 15);
             this.label1.TabIndex = 185;
             this.label1.Text = "Type composant";
             // 
@@ -281,7 +285,7 @@ namespace FD_STOCK
             // 
             // color
             // 
-            this.color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.color.FormattingEnabled = true;
             this.color.Items.AddRange(new object[] {
             "Noir ",
@@ -297,34 +301,65 @@ namespace FD_STOCK
             "Vert ",
             "Violet",
             "Rose"});
-            this.color.Location = new System.Drawing.Point(329, 87);
+            this.color.Location = new System.Drawing.Point(317, 19);
             this.color.Name = "color";
-            this.color.Size = new System.Drawing.Size(160, 24);
+            this.color.Size = new System.Drawing.Size(160, 23);
             this.color.TabIndex = 252;
             this.color.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.enregistrer);
+            this.groupBox1.Controls.Add(this.color);
+            this.groupBox1.Controls.Add(this.modifier);
+            this.groupBox1.Controls.Add(this.r);
+            this.groupBox1.Controls.Add(this.ndp);
+            this.groupBox1.Controls.Add(this.pa);
+            this.groupBox1.Controls.Add(this.nr);
+            this.groupBox1.Controls.Add(this.ta);
+            this.groupBox1.Controls.Add(this.nda);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.pah);
+            this.groupBox1.Location = new System.Drawing.Point(14, 50);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1110, 172);
+            this.groupBox1.TabIndex = 253;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rec);
+            this.groupBox2.Controls.Add(this.rechercher);
+            this.groupBox2.Controls.Add(this.tableau);
+            this.groupBox2.Location = new System.Drawing.Point(14, 228);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1110, 482);
+            this.groupBox2.TabIndex = 254;
+            this.groupBox2.TabStop = false;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "N° de composant";
             this.Column1.Name = "Column1";
-            this.Column1.Width = 130;
+            this.Column1.Width = 155;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Type de composant";
             this.Column5.Name = "Column5";
-            this.Column5.Width = 130;
+            this.Column5.Width = 155;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Couleur";
             this.Column6.Name = "Column6";
+            this.Column6.Width = 155;
             // 
             // Column10
             // 
             this.Column10.HeaderText = "N° de référence";
             this.Column10.Name = "Column10";
-            this.Column10.Width = 150;
+            this.Column10.Width = 155;
             // 
             // Column2
             // 
@@ -336,39 +371,31 @@ namespace FD_STOCK
             // 
             this.Column4.HeaderText = "Prix d\'achat HT";
             this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
+            this.Column4.Width = 155;
             // 
             // npg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 722);
-            this.Controls.Add(this.color);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.ta);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pah);
-            this.Controls.Add(this.nda);
-            this.Controls.Add(this.nr);
-            this.Controls.Add(this.pa);
-            this.Controls.Add(this.ndp);
-            this.Controls.Add(this.r);
-            this.Controls.Add(this.modifier);
-            this.Controls.Add(this.enregistrer);
-            this.Controls.Add(this.rec);
-            this.Controls.Add(this.rechercher);
-            this.Controls.Add(this.tableau);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "npg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nouveau produit général";
             this.Load += new System.EventHandler(this.npg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableau)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,6 +422,8 @@ namespace FD_STOCK
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox color;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
