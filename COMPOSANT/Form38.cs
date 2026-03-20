@@ -53,12 +53,13 @@ namespace FD_STOCK
             // UNCOMMENT TO TEST 58mm width
             //pd.DefaultPageSettings.PaperSize = new PaperSize("SmallRoll", 228, 315);
             //pd.DefaultPageSettings.PaperSize = new PaperSize("SmallRoll", 236, 236);
-            pd.DefaultPageSettings.PaperSize = new PaperSize("SmallRoll", 236, 260);
+            //pd.DefaultPageSettings.PaperSize = new PaperSize("SmallRoll", 236, 260);
+            pd.DefaultPageSettings.PaperSize = new PaperSize("5X5", 197, 197);
 
             PrintPreviewDialog preview = new PrintPreviewDialog();
             preview.Document = pd;
-            preview.Width = 600;
-            preview.Height = 800;
+            preview.Width = 189;
+            preview.Height = 189;
             preview.ShowDialog();
 
 
@@ -78,52 +79,49 @@ namespace FD_STOCK
             g.DrawString(label, labelFont, Brushes.Black, labelX, y);
 
             // 2. Draw the Value (Fixed position on the Right)
-            g.DrawString(value, valueFont, Brushes.Black, valueX, y);
+            g.DrawString(": "+value, valueFont, Brushes.Black, valueX, y);
 
-            // 3. Move down for the next line
+            // 3. Move down for the next line - Reduced from 20 to 15
             y += 20;
         }
 
         private void ConstructTicketLayout(object sender, PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
-            float pageWidth = e.PageBounds.Width;
-            float yPos = 10;
-            float leftMargin = 10;
+            float pageWidth = e.PageBounds.Width; // This will now be 197
+            float yPos = 5;
+            float leftMargin = 5;
 
-            // This is the "Tab" position where all values will start aligned
+            // "Tab" position where all values will start aligned
             float valueXPosition = pageWidth * 0.40f;
 
-            // Fonts
-            Font titleFont = new Font("Arial", 14, FontStyle.Bold);
-            Font headerFont = new Font("Arial", 10, FontStyle.Bold);
-            Font bodyFont = new Font("Arial", 9, FontStyle.Regular);
-            Font valueFont = new Font("Arial", 9, FontStyle.Bold); // Optional: Make values bold?
+            // --- SCALED FONTS ---
+            // Reduced font sizes to fit the smaller 5x5cm width
+            Font titleFont = new Font("Arial", 13, FontStyle.Bold);      // Was 14
+            Font headerFont = new Font("Arial", 9, FontStyle.Bold);      // Was 10
+            Font bodyFont = new Font("Arial", 8, FontStyle.Regular);     // Was 9
+            Font valueFont = new Font("Arial", 8, FontStyle.Bold);       // Was 9
 
             StringFormat centerFormat = new StringFormat { Alignment = StringAlignment.Center };
 
             // --- 1. HEADERS (Centered) ---
+            // Reduced height allocation from 30 to 20
             g.DrawString(_currentTicket.CompanyName, titleFont, Brushes.Black,
-                new RectangleF(0, yPos, pageWidth, 30), centerFormat);
-            yPos += 30;
-
-            //g.DrawString(_currentTicket.ComposantName, headerFont, Brushes.Black,
-            //    new RectangleF(0, yPos, pageWidth, 25), centerFormat);
-            //yPos += 25;
-
+                new RectangleF(0, yPos, pageWidth, 20), centerFormat);
+            yPos += 20; // Was 30
             g.DrawLine(Pens.Black, leftMargin, yPos, pageWidth - leftMargin, yPos);
-            yPos += 10;
+            yPos += 5; // Reduced from 10
 
             // --- 2. DETAILS (Aligned Columns) ---
-            // We use the new helper method here
-            DrawAlignedLineItem(g, "Référence:", _currentTicket.Reference, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
-            DrawAlignedLineItem(g, " Composant:", _currentTicket.ComposantName, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
-            DrawAlignedLineItem(g, "Quantité:", _currentTicket.Quantity, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
-            DrawAlignedLineItem(g, "Date:", _currentTicket.Date, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
-            DrawAlignedLineItem(g, "Entrée par:", _currentTicket.User, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
-            DrawAlignedLineItem(g, "Fournisseur:", _currentTicket.Supplier, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+            // The DrawAlignedLineItem method now increments yPos by 15 instead of 20
+            DrawAlignedLineItem(g, "Référence", _currentTicket.Reference, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+            DrawAlignedLineItem(g, "Composant", _currentTicket.ComposantName, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+            DrawAlignedLineItem(g, "Quantité", _currentTicket.Quantity, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+            DrawAlignedLineItem(g, "Date", _currentTicket.Date, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+            DrawAlignedLineItem(g, "Entrée par", _currentTicket.User, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
+            DrawAlignedLineItem(g, "Fournisseur", _currentTicket.Supplier, bodyFont, valueFont, leftMargin, valueXPosition, ref yPos);
 
-            yPos += 5;
+            yPos += 2; // Reduced from 5
 
             // --- 3. BARCODE (Centered) ---
             if (!string.IsNullOrEmpty(_currentTicket.BoxNumber))
@@ -132,19 +130,19 @@ namespace FD_STOCK
                 if (barcodeImg != null)
                 {
                     float barcodeWidth = pageWidth * 0.80f;
-                    float barcodeHeight = 30;
+                    float barcodeHeight = 25; // Reduced from 30
                     float centerImageX = (pageWidth - barcodeWidth) / 2;
 
                     g.DrawImage(barcodeImg, centerImageX, yPos, barcodeWidth, barcodeHeight);
 
-                    yPos += barcodeHeight + 5;
+                    yPos += barcodeHeight + 2; // Reduced spacing
                     g.DrawString(_currentTicket.BoxNumber, bodyFont, Brushes.Black,
-                        new RectangleF(0, yPos, pageWidth, 20), centerFormat);
+                        new RectangleF(0, yPos, pageWidth, 15), centerFormat);
                 }
             }
         }
 
-        // Helper to draw text lines clearly
+        //Helper to draw text lines clearly
         private void DrawLineItem(Graphics g, string label, string value, Font font, float x, ref float y)
         {
             g.DrawString($"{label} {value}", font, Brushes.Black, x, y);
